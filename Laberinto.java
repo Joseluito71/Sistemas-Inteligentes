@@ -69,12 +69,12 @@ public void mostrar() {
     for(int i = 0; i<filas; i++){
 
         for(int j = 0; j<columnas; j++){
-
-            System.out.print(laberinto[i][j]);
-
-            if(j == columnas-1){
-                System.out.print("\t");
+            if (laberinto [i] [j] ==null) {
+                System.out.println("[ ]");
             }
+            System.out.print("[" +laberinto[i][j] +"]");
+            System.out.print(" ");
+          
         }
     }   
 }

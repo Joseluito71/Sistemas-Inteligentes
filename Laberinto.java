@@ -15,8 +15,16 @@ public Random rand= new Random();
 public int  NumObstaculos= filas*columnas*30/100;
 public int area= columnas*filas;
 
-public Laberinto() {
+public laberinto() {
 laberinto = new String [filas] [columnas];
+
+}
+public void Inicializar() {
+    for (int i=0; i<filas;i++) {
+        for (int j=0; j<columnas;j++) {
+            laberinto [i] [j] =null;
+        }
+    }
 }
 public void RellenarObstaculos() {
     for (int i=0; i<NumObstaculos;i++) {
@@ -26,6 +34,23 @@ public void RellenarObstaculos() {
             RellenarObstaculosRec();
         } else  laberinto [randomfilas] [randomcolumnas] = "*";
     }
+}
+public void PonerInicio(){
+    int rdm1=rand.nextInt(area);
+    int rdm2= rand.nextInt(area);
+    if (laberinto [rdm1] [rdm2] != null) {
+        PonerInicioRec();
+    } else laberinto [rdm1] [rdm2] = "I",
+}
+
+private void PonerInicioRec() {
+    int rdm1= rand.nextInt(area);
+  int rdm2= rand.nextInt(area);
+  if (laberinto [rdm1] [rdm2] != null) {
+    RellenarObstaculosRec();
+    } else {
+        laberinto [rdm1] [rdm2] = "I";
+    } 
 }
 
 private void RellenarObstaculosRec() {

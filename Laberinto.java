@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Laberinto {
 
-public int filas= 60;
-public int columnas=80;
+public int filas= 10;
+public int columnas=5;
 public String [] []   laberinto;
 public String obstaculo = "*";
 public String NoObstaculo=" ";
@@ -37,5 +37,27 @@ private void RellenarObstaculosRec() {
         laberinto [rdm1] [rdm2] = "*";
     } 
 }
+
+
+public void mostrar() {
+
+    for(int i = 0; i<filas; i++){
+
+        for(int j = 0; j<columnas; j++){
+
+            System.out.print(laberinto[i][j]);
+
+            if(j == columnas-1){
+                System.out.print("\t");
+            }
+        }
+    }   
+}
+
+public String toString() {
+    return laberinto.toString();
+}
+
+
 
 }

@@ -5,7 +5,7 @@ public class Laberinto {
 
 public int filas= 10;
 public int columnas=5;
-public String [] []   laberinto;
+public String [] []  laberinto;
 public String obstaculo = "*";
 public String NoObstaculo=" ";
 public String inicio= "I";
@@ -30,7 +30,7 @@ public void RellenarObstaculos() {
     for (int i=0; i<NumObstaculos;i++) {
         int randomfilas=rand.nextInt(filas);
         int randomcolumnas= rand.nextInt(columnas);
-        if (laberinto [randomfilas] [randomcolumnas] == "*") {
+        if (laberinto [randomfilas] [randomcolumnas] !=null) {
             RellenarObstaculosRec();
         } else  laberinto [randomfilas] [randomcolumnas] = "*";
     }
@@ -53,10 +53,28 @@ private void PonerInicioRec() {
     } 
 }
 
+public void PonerFinal(){
+    int rdm1=rand.nextInt(filas);
+    int rdm2= rand.nextInt(columnas);
+    if (laberinto [rdm1] [rdm2] != null) {
+        PonerFinalRec();
+    } else laberinto [rdm1] [rdm2] = "G";
+}
+
+private void PonerFinalRec() {
+    int rdm1= rand.nextInt(filas);
+  int rdm2= rand.nextInt(columnas);
+  if (laberinto [rdm1] [rdm2] != null) {
+    RellenarObstaculosRec();
+    } else {
+        laberinto [rdm1] [rdm2] = "G";
+    } 
+}
+
 private void RellenarObstaculosRec() {
   int rdm1= rand.nextInt(filas);
   int rdm2= rand.nextInt(columnas);
-  if (laberinto [rdm1] [rdm2] == "*") {
+  if (laberinto [rdm1] [rdm2] != "*") {
     RellenarObstaculosRec();
     } else {
         laberinto [rdm1] [rdm2] = "*";
@@ -74,7 +92,6 @@ public void mostrar() {
             }
             System.out.print("[" +laberinto[i][j] +"]");
             System.out.print(" ");
-          
         }
     }   
 }
@@ -88,6 +105,7 @@ public String toString() {
    lab1.Inicializar();
    lab1.RellenarObstaculos();
    lab1.PonerInicio();
+   lab1.PonerFinal();
    lab1.mostrar(); 
 } 
 

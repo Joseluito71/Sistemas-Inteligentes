@@ -13,7 +13,7 @@ public String fin= "G";
 public String Optimo= "+";
 public Random rand= new Random();
 public int  NumObstaculos= filas*columnas*30/100;
-public int area= columnas*filas;
+
 
 public Laberinto() {
 laberinto = new String [filas] [columnas];
@@ -28,24 +28,24 @@ public void Inicializar() {
 }
 public void RellenarObstaculos() {
     for (int i=0; i<NumObstaculos;i++) {
-        int randomfilas=rand.nextInt(area);
-        int randomcolumnas= rand.nextInt(area);
+        int randomfilas=rand.nextInt(filas);
+        int randomcolumnas= rand.nextInt(columnas);
         if (laberinto [randomfilas] [randomcolumnas] == "*") {
             RellenarObstaculosRec();
         } else  laberinto [randomfilas] [randomcolumnas] = "*";
     }
 }
 public void PonerInicio(){
-    int rdm1=rand.nextInt(area);
-    int rdm2= rand.nextInt(area);
+    int rdm1=rand.nextInt(filas);
+    int rdm2= rand.nextInt(columnas);
     if (laberinto [rdm1] [rdm2] != null) {
         PonerInicioRec();
     } else laberinto [rdm1] [rdm2] = "I";
 }
 
 private void PonerInicioRec() {
-    int rdm1= rand.nextInt(area);
-  int rdm2= rand.nextInt(area);
+    int rdm1= rand.nextInt(filas);
+  int rdm2= rand.nextInt(columnas);
   if (laberinto [rdm1] [rdm2] != null) {
     RellenarObstaculosRec();
     } else {
@@ -54,8 +54,8 @@ private void PonerInicioRec() {
 }
 
 private void RellenarObstaculosRec() {
-  int rdm1= rand.nextInt(area);
-  int rdm2= rand.nextInt(area);
+  int rdm1= rand.nextInt(filas);
+  int rdm2= rand.nextInt(columnas);
   if (laberinto [rdm1] [rdm2] == "*") {
     RellenarObstaculosRec();
     } else {

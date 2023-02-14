@@ -87,10 +87,9 @@ public void mostrar() {
     for(int i = 0; i<filas; i++){
 
         for(int j = 0; j<columnas; j++){
-            if (laberinto [i] [j] ==null) {
+            if (laberinto [i] [j] == null) {
                 System.out.println("[ ]");
-            }
-            System.out.print("[" +laberinto[i][j] +"]");
+            } else System.out.print("[" +laberinto[i][j] +"]");
             System.out.print(" ");
         }
     }   

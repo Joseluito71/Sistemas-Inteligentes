@@ -58,6 +58,12 @@ public String toString() {
     return laberinto.toString();
 }
 
+public main Prueba {
+ Laberinto lab1 = new Laberinto;
+ lab1.Laberinto();
+ lab1.RellenarObstaculos;
+ System.out.println();
+}
 
 
 }

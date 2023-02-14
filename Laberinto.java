@@ -15,14 +15,14 @@ public Random rand= new Random();
 public int  NumObstaculos= filas*columnas*30/100;
 public int area= columnas*filas;
 
-public laberinto() {
+public Laberinto() {
 laberinto = new String [filas] [columnas];
 
 }
 public void Inicializar() {
     for (int i=0; i<filas;i++) {
         for (int j=0; j<columnas;j++) {
-            laberinto [i] [j] =null;
+            laberinto [i] [j] = null;
         }
     }
 }
@@ -40,7 +40,7 @@ public void PonerInicio(){
     int rdm2= rand.nextInt(area);
     if (laberinto [rdm1] [rdm2] != null) {
         PonerInicioRec();
-    } else laberinto [rdm1] [rdm2] = "I",
+    } else laberinto [rdm1] [rdm2] = "I";
 }
 
 private void PonerInicioRec() {
@@ -83,12 +83,13 @@ public String toString() {
     return laberinto.toString();
 }
 
-public main Prueba {
- Laberinto lab1 = new Laberinto;
- lab1.Laberinto();
- lab1.RellenarObstaculos;
- System.out.println();
-}
+ public static void main(String[] args) {
+   Laberinto lab1= new Laberinto();
+   lab1.Inicializar();
+   lab1.RellenarObstaculos();
+   lab1.PonerInicio();
+   lab1.mostrar(); 
+} 
 
 
 }

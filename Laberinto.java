@@ -83,17 +83,14 @@ private void RellenarObstaculosRec() {
 
 
 public void mostrar() {
-
-    for(int i = 0; i<filas; i++){
-
-        for(int j = 0; j<columnas; j++){
-            if (laberinto [i] [j] ==null) {
-                System.out.println("[ ]");
-            }
-            System.out.print("[" +laberinto[i][j] +"]");
-            System.out.print(" ");
+    for (int x=0; x < filas; x++) {
+        System.out.print("|");
+        for (int y=0; y < columnas; y++) {
+          System.out.print (laberinto[x][y]);
+          if (y!=laberinto[x].length-1) System.out.print("\t");
         }
-    }   
+        System.out.println("|");
+      }
 }
 
 public String toString() {

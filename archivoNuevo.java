@@ -1,34 +1,4 @@
 
-Skip to content
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
-@IsraelGomezUrbano
-lucasmartioli /
-AlgoritmoA
-Public
-
-Fork your own copy of lucasmartioli/AlgoritmoA
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-
-    Insights
-
-AlgoritmoA/AlgoritmoAEstrela.java /
-@lucasmartioli
-lucasmartioli A*
-Latest commit bc118c0 Jul 25, 2015
-History
-1 contributor
-110 lines (80 sloc) 3.92 KB
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -139,21 +109,6 @@ public class AlgoritmoAEstrela {
     }
 
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
 
 /*package practica2021a;
 

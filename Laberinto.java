@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 
 
 public class Laberinto {
@@ -13,6 +13,7 @@ public String fin= "G";
 public String Optimo= "+";
 public Random rand= new Random();
 public int  NumObstaculos= filas*columnas*30/100;
+
 
 
 public Laberinto() {
@@ -105,8 +106,48 @@ public String toString() {
    lab1.PonerFinal();
    lab1.mostrar(); 
 } 
-public void algoritmoA(){
-    
+
+
+// EMPIEZA A*
+
+
+public Laberinto Start(){
+   Laberinto lab1= new Laberinto();  
+   lab1.Inicializar();
+   lab1.RellenarObstaculos();
+   lab1.PonerInicio();
+   lab1.PonerFinal();
+   return lab1;
 }
 
+
+
+
+
+public int h(int a){
+int res = 0;
+
+
+    return res;
 }
+
+public void A(){
+    Laberinto openset = Start();
+    Set<Map<Integer,Integer>> closedset= new HashSet<>() ;
+    Map<Integer,Integer> parent = new HashMap<>();
+    List<Integer> g = new ArrayList<>();
+    List<Integer> f = new ArrayList<>();
+    g.add(0, 0);
+    f.add(0, (g.get(0)+h(0)));
+    
+    while(!closedset.isEmpty()){
+        Map<Integer,Integer> current = new HashMap<>();
+        
+    }
+
+
+}
+
+
+}
+

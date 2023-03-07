@@ -105,6 +105,8 @@ public String toString() {
    lab1.PonerFinal();
    lab1.mostrar(); 
 } 
-
+public void algoritmoA(){
+    
+}
 
 }

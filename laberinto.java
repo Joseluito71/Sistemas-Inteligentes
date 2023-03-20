@@ -19,7 +19,7 @@ public class laberinto {
 
     private void inicializar() {
         for (int i=0;i<filas;i++){
-            for (int j=0;i<columnas;j++){
+            for (int j=0;j<columnas;j++){
                 lab[i][j]=' ';
             }
         }

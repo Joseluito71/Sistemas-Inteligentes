@@ -21,7 +21,7 @@ public class Algortimo_A {
 
     private int buscarNodo(int x1, int y1){ // buscamos la posición de un nodo en el conjunto cerrado a partir de sus coordenadas
         int pos=-1;
-        for(int i=0;i<closedSet.size();i++){
+        for(int i=0;i<closedSet.size() && pos<0;i++){
             if(closedSet.get(i).getX()==x1 && closedSet.get(i).getY()==y1) pos=i;
         }
         return pos;

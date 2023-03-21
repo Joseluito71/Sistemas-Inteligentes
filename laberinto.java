@@ -1,8 +1,8 @@
 import java.util.Random;
 public class laberinto {
 
-    protected final int filas=60;
-    protected final int columnas=80;
+    protected final int filas=5;
+    protected final int columnas=10;
     protected static final double porcentaje=0.3;
     protected char [] [] lab;
     public int[] posIni= new int [2];

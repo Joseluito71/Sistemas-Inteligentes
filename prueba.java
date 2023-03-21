@@ -4,6 +4,7 @@ public class prueba {
         lab.mostrar();
         System.out.println("\n \n \n \n \n \n  ");
         Algortimo_A ejecutar= new Algortimo_A(lab);
+        System.out.println("hola ");
         ejecutar.buscarCamino();
         lab.mostrar();
     }

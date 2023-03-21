@@ -1,13 +1,15 @@
 package v2;
-import java.util.*;
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.StringJoiner;
 
 
 public class Laberinto {
     private static final char SALIDA = 'I';
     private static final char FIN = 'G';
-    private static final char OBSTACULO = '*';
+    private static final char OBSTACULO = '\u2588';
     private static final char LIBRE = ' ';
     private static final char VISITADO = '+';
     private static final char ABIERTO = 'A';
@@ -177,7 +179,7 @@ public class Laberinto {
             String linea = "";
 
             for (int j = 0; j < dimensionY; j++) {
-                linea += "[" + matriz[i][j] + "]"; // Analiza por columnas, permutamos los indices
+                linea +=  matriz[i][j]  ; // Analiza por columnas, permutamos los indices
             }
 
             res.add(linea);

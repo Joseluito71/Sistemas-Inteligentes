@@ -5,7 +5,6 @@ public class prueba {
         System.out.println("\n \n \n \n \n \n  ");
         System.out.println("espacios"); 
         Algortimo_A ejecutar= new Algortimo_A(lab);
-        System.out.println("crea");
         ejecutar.buscarCamino();
         System.out.println("busca");
         lab.mostrar();

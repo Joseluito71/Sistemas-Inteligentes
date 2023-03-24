@@ -70,12 +70,18 @@ public class Algortimo_A {
 
     public void buscarCamino() {
         NODO actual=openSet.get(0);
+        System.out.print(actual);
         int moverse=1;//moverse en una casilla
         while( (openSet.size()>0) && (actual.getX()!=laberinto.posFin[0] || actual.getY()!=laberinto.posFin[1]) ){
             anyadirNodos(actual, moverse);
+            System.out.print(closedSet);
             closedSet.add(actual);
+            System.out.print(closedSet);
             openSet.remove(actual);
+            System.out.print(openSet);
             actual=elegirSig();
+            System.out.print(actual);
+            System.out.println(" SIGUIENTE ITERACION \n \n ");
             if(openSet.size()<=0) {
                 throw new RuntimeException("Camino no generable");
             }

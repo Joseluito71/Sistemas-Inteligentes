@@ -55,7 +55,7 @@ public class AEstrella {
         }        
     }
 
-    private ArrayList<Nodo> Backtraking(Nodo actual){
+    private ArrayList<Nodo> Backtracking(Nodo actual){
         ArrayList<Nodo> res= new ArrayList<>();
         Nodo siguiente=actual;
         while(siguiente!=null){
@@ -79,7 +79,7 @@ public class AEstrella {
                 anyadirVecinos(actual);
             } else{
                 hemosTerminado=true;
-                camino= Backtraking(actual);
+                camino= Backtracking(actual);
             }
 
         }

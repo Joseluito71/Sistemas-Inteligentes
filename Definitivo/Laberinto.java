@@ -153,7 +153,7 @@ public class Laberinto {
             }
         }
         //crear el archivo
-        try (PrintWriter sol= new PrintWriter(new File("solucion.txt"))){
+        try (PrintWriter sol= new PrintWriter(new File("salida.txt"))){
             sol.println(this.toString());
             sol.print("Coste del camino de solucion = "+nodos.size());
         } catch (Exception e){

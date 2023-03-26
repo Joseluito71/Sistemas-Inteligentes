@@ -1,4 +1,4 @@
-package Definitivo;
+package practica1;
 
 public class Nodo implements Comparable<Nodo> {
     

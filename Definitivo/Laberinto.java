@@ -52,6 +52,12 @@ public class Laberinto {
     }
 
     public void inicializar(){
+
+        ponerInicio();
+        ponerFinal();
+        ponerObstaculos();
+
+        /* 
         Random rand= new Random();
         int tamaño= this.filas*this.columnas;
         int nObstaculos= (int) (tamaño*this.porcentaje/100);
@@ -83,7 +89,44 @@ public class Laberinto {
             }
             lab[obstaculoX][obstaculoY]=OBSTACULO;
         }
+            */
 
+    }
+
+    private void ponerInicio(){
+        Random rand= new Random();
+        salidaX = rand.nextInt(filas-1);
+        salidaY=rand.nextInt(columnas-1);
+        lab[salidaX][salidaY] = SALIDA;
+    }
+
+    private void ponerFinal(){
+        Random rand= new Random();
+        finX = rand.nextInt(filas-1);
+        finY=rand.nextInt(columnas-1);
+        boolean superPosicion=salidaX==finX && salidaY==finY;
+        while(superPosicion){
+            finX=rand.nextInt(filas-1);
+            finY=rand.nextInt(columnas-1);
+        }
+        lab[finX][finY]=FIN;
+    }
+
+    private void ponerObstaculos(){
+        Random rand= new Random();
+        int tamaño= this.filas*this.columnas;
+        int nObstaculos= (int) (tamaño*this.porcentaje/100);
+        int obstaculoX,obstaculoY;
+
+        for (int i=0;i<nObstaculos;i++){
+            obstaculoX=rand.nextInt(filas-1);
+            obstaculoY=rand.nextInt(columnas-1);
+            while(lab[obstaculoX][obstaculoY]!=LIBRE){
+            obstaculoX=rand.nextInt(filas-1);
+            obstaculoY=rand.nextInt(columnas-1);
+            }
+            lab[obstaculoX][obstaculoY]=OBSTACULO;
+        }
 
     }
 

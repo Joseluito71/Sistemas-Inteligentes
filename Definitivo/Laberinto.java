@@ -1,6 +1,7 @@
 package Definitivo;
 
 import java.util.Random;
+import java.util.StringJoiner;
 
 public class Laberinto {
 
@@ -109,5 +110,29 @@ public class Laberinto {
     public boolean esFin(Nodo n){
         return (n.getX()==finX && n.getY()==finY);
     }
+
+    public void mostrar(){
+        System.out.println(this.toString());
+    }
+
+    @Override
+    public String toString(){
+
+        StringJoiner str= new StringJoiner("\n");
+        for(int i=0;i<filas;i++){
+            String linea="";
+            for(int j=0;j<columnas;j++){
+//                if(lab[i][j]==ABIERTO || lab[i][j]==CERRADO){
+//                    linea+=LIBRE;
+//                }else{
+//                    linea+= lab[i][j]
+//                }
+                linea+= lab[i][j];
+            }
+            str.add(linea);
+        }
+        return str.toString();
+    }
+
 
 }

@@ -7,7 +7,7 @@ public class Main {
         test.inicializar();
         AEstrella h0= new AEstrella(test);
         test.mostrar();
-        System.out.println("------------------------------");
+        System.out.println("------------------------------ \n");
         test.pintarSolucion(h0.calcularCamino());
     }
 }

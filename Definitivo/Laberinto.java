@@ -59,41 +59,6 @@ public class Laberinto {
         ponerInicio();
         ponerFinal();
         ponerObstaculos();
-
-        /* 
-        Random rand= new Random();
-        int tamaño= this.filas*this.columnas;
-        int nObstaculos= (int) (tamaño*this.porcentaje/100);
-        int obstaculoX,obstaculoY;
-        //ponemos inicio
-        salidaX=rand.nextInt(filas-1);
-        salidaY=rand.nextInt(columnas-1);
-        lab[salidaX][salidaY]=SALIDA;
-        //ponemos final
-        finX=rand.nextInt(filas-1);
-        finY=rand.nextInt(columnas-1);
-        boolean superPosicion=salidaX==finX && salidaY==finY;
-        if (superPosicion){
-            while(superPosicion){
-                finX=rand.nextInt(filas-1);
-                finY=rand.nextInt(columnas-1);
-            }
-            lab[finX][finY]=FIN;
-        }else{
-            lab[finX][finY]=FIN;
-        }
-        //ponemos obstaculos
-        for (int i=0;i<nObstaculos;i++){
-            obstaculoX=rand.nextInt(filas-1);
-            obstaculoY=rand.nextInt(columnas-1);
-            while(lab[obstaculoX][obstaculoY]!=LIBRE){
-            obstaculoX=rand.nextInt(filas-1);
-            obstaculoY=rand.nextInt(columnas-1);
-            }
-            lab[obstaculoX][obstaculoY]=OBSTACULO;
-        }
-            */
-
     }
 
     private void ponerInicio(){
@@ -173,7 +138,6 @@ public class Laberinto {
                 }else{
                     linea+= lab[i][j];
                 }
-//                linea+= lab[i][j];
             }
             str.add(linea);
         }
@@ -193,7 +157,7 @@ public class Laberinto {
             sol.println(this.toString());
             sol.print("Coste del camino de solucion = "+nodos.size());
         } catch (Exception e){
-            System.err.println("Error al pintar el laberinto");
+            System.err.println("Error al crear el archivo solucion");
         }
         //mostrar por consola
         this.mostrar();

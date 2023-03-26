@@ -2,6 +2,9 @@ package Definitivo;
 
 import java.util.Random;
 import java.util.StringJoiner;
+import java.io.PrintWriter;
+import java.io.File;
+import java.util.ArrayList;
 
 public class Laberinto {
 
@@ -177,5 +180,24 @@ public class Laberinto {
         return str.toString();
     }
 
+    public void pintarSolucion(ArrayList<Nodo> nodos){
+
+        for (int i=0;i<nodos.size();i++){
+            Nodo actual=nodos.get(i);
+            if (lab[actual.getX()][actual.getY()] !=SALIDA && lab[actual.getX()][actual.getY()]!=FIN ){
+                lab[actual.getX()][actual.getY()]=OPTIMO;                
+            }
+        }
+        //crear el archivo
+        try (PrintWriter sol= new PrintWriter(new File("solucion.txt"))){
+            sol.println(this.toString());
+            sol.print("Coste del camino de solucion = "+nodos.size());
+        } catch (Exception e){
+            System.err.println("Error al pintar el laberinto");
+        }
+        //mostrar por consola
+        this.mostrar();
+        System.out.println("Coste del camino de solucion = "+nodos.size());
+    }
 
 }

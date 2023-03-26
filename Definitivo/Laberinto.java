@@ -168,12 +168,12 @@ public class Laberinto {
         for(int i=0;i<filas;i++){
             String linea="";
             for(int j=0;j<columnas;j++){
-//                if(lab[i][j]==ABIERTO || lab[i][j]==CERRADO){
-//                    linea+=LIBRE;
-//                }else{
-//                    linea+= lab[i][j]
-//                }
-                linea+= lab[i][j];
+                if(lab[i][j]==ABIERTO || lab[i][j]==CERRADO){
+                    linea+=LIBRE;
+                }else{
+                    linea+= lab[i][j];
+                }
+//                linea+= lab[i][j];
             }
             str.add(linea);
         }

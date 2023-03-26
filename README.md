@@ -1,2 +1,0 @@
-# Sistemas-Inteligentes
-Practricas SI

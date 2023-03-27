@@ -3,7 +3,7 @@ public class Main {
     
     public static void main(String[] args){
 
-        Laberinto test = new Laberinto(10, 15);
+        Laberinto test = new Laberinto(60, 80);
         test.inicializar();
         AEstrella h0= new AEstrella(test);
         test.mostrar();

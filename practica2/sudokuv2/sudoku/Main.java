@@ -3,7 +3,9 @@ import java.util.Arrays;
 import com.qqwing.*;
 import com.qqwing.Difficulty;
 
-public class Main {
+	public class Main{
+		
+	
   public static void main(String[] args) {
     QQWing test = new QQWing();
     test.generatePuzzle();
@@ -19,5 +21,6 @@ public class Main {
 
     // printMatrix(matrix);
   }
+
 
 }

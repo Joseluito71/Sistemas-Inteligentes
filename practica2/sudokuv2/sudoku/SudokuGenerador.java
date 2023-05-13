@@ -18,10 +18,29 @@ public class SudokuGenerador {
 
   // method that receive int matrix and prints as table
   public static void printMatrix(int[][] matrix) {
-    for (int i = 0; i < 9; i++) {
+	  boolean es=false;
+	  int o=0;
+	  for (int i = 0; i < 12; i++) {
       System.out.print("|");
-      for (int j = 0; j < 9; j++) {
-        System.out.print(matrix[i][j] + "|");
+      if(i==3 || i==7 || i==11){
+    	  es=true;
+    	  for(int r=0;r<11;r++) {
+    		  System.out.print("-");
+    	  }
+    	  System.out.print("|");
+      }else {
+      for (int j = 0; j < 9; j++) { 
+    	  
+    	  if(es) {
+    		   o++;
+    		   es=false;
+    	  }
+    	  if((j+1)%3==0 && j!=0) {
+    	  System.out.print(matrix[i-o][j] + "|");
+    	  }else {
+    	  System.out.print(matrix[i-o][j]);	  
+    	  }
+      }
       }
       System.out.println("");
     }

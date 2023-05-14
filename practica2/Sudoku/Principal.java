@@ -5,6 +5,7 @@ public class Principal {
 		
 		Resolver solucion= new Resolver();
 		solucion.resolver();
+		
 	}
 	
 }

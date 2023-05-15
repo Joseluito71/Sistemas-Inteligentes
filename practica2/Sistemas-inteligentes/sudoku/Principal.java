@@ -117,13 +117,13 @@ public class Principal {
     }
     try {
       File file = new File("output" + ".txt");
-      FileWriter writer = new FileWriter(file, false);
-      BufferedWriter bufferedWriter = new BufferedWriter(writer);
+      FileWriter w = new FileWriter(file, false);
+      BufferedWriter bufferWriter = new BufferedWriter(w);
 
       for (String fila : datos) {
-        bufferedWriter.write(fila + "\n");
+        bufferWriter.write(fila + "\n");
       }
-      bufferedWriter.close();
+      bufferWriter.close();
       System.out.println("Archivo exportado correctamente.");
     } catch (IOException e) {
       System.err.println("Error al exportar archivo: " + e.getMessage());

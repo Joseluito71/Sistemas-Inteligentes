@@ -1,71 +1,64 @@
 public class PencilMarking {
-  // Función que realiza el proceso de pencil marking
-  public static int[][] pencilMarking(int[][] sudoku) {
-    boolean[][][] possibilities = new boolean[9][9][9]; // Array de posibilidades iniciales
+  public static int[][] pencilMarking(int[][] s) {
 
-    // Inicializar array de posibilidades para cada celda
+	  boolean[][][] p = new boolean[9][9][9]; 
     for (int row = 0; row < 9; row++) {
       for (int col = 0; col < 9; col++) {
-        if (sudoku[row][col] == 0) {
-          // Si la celda está vacía, se inicializa con todas las posibilidades
+        if (s[row][col] == 0) {
           for (int i = 0; i < 9; i++) {
-            possibilities[row][col][i] = true;
+            p[row][col][i] = true;
           }
         } else {
-          // Si la celda ya tiene un valor, se marca esa posibilidad como verdadera y las
-          // demás como falsas
-          int value = sudoku[row][col] - 1;
-          for (int i = 0; i < 9; i++) {
-            possibilities[row][col][i] = (i == value);
+          
+        	int value = s[row][col] - 1;
+          
+        	for (int i = 0; i < 9; i++) {
+            p[row][col][i] = (i == value);
           }
         }
       }
     }
 
-    boolean changed = true;
-    while (changed) {
-      changed = false;
-
-      // Eliminar posibilidades de cada celda basado en los valores en la misma fila,
-      // columna y subcuadrícula
-      for (int row = 0; row < 9; row++) {
-        for (int col = 0; col < 9; col++) {
-          if (sudoku[row][col] == 0) {
-            // Obtener subcuadrícula actual
+    
+    boolean cambiado = true;
+    
+    while (cambiado) {
+    
+    	cambiado = false;
+      
+    	for (int row = 0; row < 9; row++) {
+        
+    	for (int col = 0; col < 9; col++) {
+          if (s[row][col] == 0) {
             int subgridRow = (row / 3) * 3;
             int subgridCol = (col / 3) * 3;
-
-            // Eliminar posibilidades basado en los valores en la misma fila, columna y
-            // subcuadrícula
             for (int i = 0; i < 9; i++) {
-              if (sudoku[row][i] != 0) {
-                possibilities[row][col][sudoku[row][i] - 1] = false;
+              if (s[row][i] != 0) {
+                p[row][col][s[row][i] - 1] = false;
               }
-              if (sudoku[i][col] != 0) {
-                possibilities[row][col][sudoku[i][col] - 1] = false;
+              if (s[i][col] != 0) {
+                p[row][col][s[i][col] - 1] = false;
               }
-              if (sudoku[subgridRow + (i / 3)][subgridCol + (i % 3)] != 0) {
-                possibilities[row][col][sudoku[subgridRow + (i / 3)][subgridCol + (i % 3)] - 1] = false;
+              if (s[subgridRow + (i / 3)][subgridCol + (i % 3)] != 0) {
+                p[row][col][s[subgridRow + (i / 3)][subgridCol + (i % 3)] - 1] = false;
               }
             }
-
-            // Verificar si sólo queda una posibilidad para la celda
             int count = 0;
             int value = 0;
             for (int i = 0; i < 9; i++) {
-              if (possibilities[row][col][i]) {
+              if (p[row][col][i]) {
                 count++;
                 value = i + 1;
               }
             }
             if (count == 1) {
-              sudoku[row][col] = value;
-              changed = true;
+              s[row][col] = value;
+              cambiado = true;
             }
           }
         }
       }
     }
-    return sudoku;
+    return s;
   }
 }

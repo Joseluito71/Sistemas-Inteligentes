@@ -64,7 +64,6 @@ public class SudokuGenerador {
     QQWing qq = new QQWing();
     qq.setRecordHistory(true);
     qq.setLogHistory(false);
-    
     boolean control = true;
     
     while (control) {

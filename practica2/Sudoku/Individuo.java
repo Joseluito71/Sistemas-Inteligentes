@@ -1,27 +1,33 @@
 import java.util.HashSet;
 
 public class Individuo implements Comparable<Individuo> {
+	
   private int[][] genes;
   private int fitness;
 
   public Individuo(int[][] genes) {
+	  
     this.genes = genes;
     this.fitness = calculoFitness();
+    
   }
 
   public int[][] getGenes() {
+	  
     return this.genes;
+    
   }
 
   public int getFitness() {
+	  
     return fitness;
+    
   }
 
  
   private int calculoFitness() {
 	  
     int fitness = 0;
-
 
     for (int i = 0; i < 9; i++) {
     	
@@ -34,6 +40,7 @@ public class Individuo implements Comparable<Individuo> {
       }
       
       fitness = fitness + valoresUnicos(columnas);
+      
     }
 
  
@@ -50,8 +57,8 @@ public class Individuo implements Comparable<Individuo> {
           for (int l = j; l < j + 3; l++) {
         	  
             tresPorTres[indice] = genes[k][l];
-            
             indice++;
+            
           }
           
         }

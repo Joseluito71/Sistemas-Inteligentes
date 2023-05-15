@@ -6,7 +6,7 @@ public class Individuo implements Comparable<Individuo> {
 
   public Individuo(int[][] genes) {
     this.genes = genes;
-    this.fitness = calculateFitness();
+    this.fitness = calculoFitness();
   }
 
   public int[][] getGenes() {
@@ -17,68 +17,105 @@ public class Individuo implements Comparable<Individuo> {
     return fitness;
   }
 
-  // Calcula el fitness del individuo
-  private int calculateFitness() {
+ 
+  private int calculoFitness() {
+	  
     int fitness = 0;
 
-    // Comprobar las columnas
+
     for (int i = 0; i < 9; i++) {
-      int[] column = new int[9];
+    	
+      int[] columnas = new int[9];
+      
       for (int j = 0; j < 9; j++) {
-        column[j] = genes[j][i];
+    	  
+        columnas[j] = genes[j][i];
+        
       }
-      fitness += countUniqueValues(column);
+      
+      fitness = fitness + valoresUnicos(columnas);
     }
 
-    // Comprobar los bloques de 3x3
+ 
     for (int i = 0; i < 9; i += 3) {
+    	
       for (int j = 0; j < 9; j += 3) {
-        int[] block = new int[9];
-        int index = 0;
+    	  
+        int[] tresPorTres = new int[9];
+        
+        int indice = 0;
+        
         for (int k = i; k < i + 3; k++) {
+        	
           for (int l = j; l < j + 3; l++) {
-            block[index] = genes[k][l];
-            index++;
+        	  
+            tresPorTres[indice] = genes[k][l];
+            
+            indice++;
           }
+          
         }
-        fitness += countUniqueValues(block);
+        
+        fitness = fitness + valoresUnicos(tresPorTres);
+        
       }
+      
     }
 
     return fitness;
   }
 
-  // Cuenta los valores únicos en un array de enteros
-  private int countUniqueValues(int[] array) {
-    HashSet<Integer> uniqueValues = new HashSet<Integer>();
+  private int valoresUnicos(int[] array) {
+	  
+    HashSet<Integer> valUnico = new HashSet<Integer>();
+    
     for (int i = 0; i < array.length; i++) {
-      uniqueValues.add(array[i]);
+    	
+      valUnico.add(array[i]);
+      
     }
-    return uniqueValues.size();
+    
+    return valUnico.size();
   }
 
-  // Compara el fitness de dos individuos para poder ordenarlos
-  public int compareTo(Individuo other) {
-    return other.fitness - this.fitness;
+
+  public int compareTo(Individuo individuo2) {
+	  
+    return individuo2.fitness - this.fitness;
+    
   }
 
-  //print genes to string with format
+ 
   public String toString() {
-    String result = "";
+	  
+    String finalResultado = "";
+    
     for (int i = 0; i < 9; i++) {
+    	
       if (i % 3 == 0) {
-        result += "-------------------------\n";
+    	  
+        finalResultado += "█████████████████████████\n"; 
+        
       }
       for (int j = 0; j < 9; j++) {
+    	  
         if (j % 3 == 0) {
-          result += "| ";
+        	
+          finalResultado += "█ ";
+          
         }
-        result += genes[i][j] + " ";
+        
+        finalResultado = finalResultado + genes[i][j] + " ";
+        
       }
-      result += "|\n";
+      
+      finalResultado += "█\n";
     }
-    result += "-------------------------\n";
-    return result;
+    
+    finalResultado += "█████████████████████████\n";
+    
+    return finalResultado;
+    
   }
 
 }

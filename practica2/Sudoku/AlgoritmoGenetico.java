@@ -24,22 +24,7 @@ public class AlgoritmoGenetico {
     
   }
 
-  public List<Individuo> getPoblacion() {
-	  
-    return poblacion;
-    
-  }
-
-  public void setPoblacion(List<Individuo> poblacion) {
-	  
-    this.poblacion = poblacion;
-    
-  }
-
-  public Individuo getRes() {
-    return res;
-    
-  }
+ 
 
   public List<Individuo> generarPoblacion() {
 	  
@@ -248,22 +233,7 @@ public class AlgoritmoGenetico {
     
   }
   
-  public boolean buscarRes() {
-	  
-	    for (Individuo individuo : this.poblacion) {
-	    	
-	      if (individuo.getFitness() == 162) {
-	    	  
-	        this.res = individuo;
-	        return true;
-	        
-	      }
-	      
-	    }
-	    
-	    return false;
-	    
-	  }
+
 
 	  public Individuo buscarMejor() {
 		  
@@ -335,6 +305,36 @@ public class AlgoritmoGenetico {
     return null;
   }
 
+  public List<Individuo> getPoblacion() {
+	  
+	    return poblacion;
+	    
+	  }
 
+	  public void setPoblacion(List<Individuo> poblacion) {
+		  
+	    this.poblacion = poblacion;
+	    
+	  }
 
+	  public Individuo getRes() {
+	    return res;
+	    
+	  }
+	  public boolean buscarRes() {
+		  
+		    for (Individuo individuo : this.poblacion) {
+		    	
+		      if (individuo.getFitness() == 162) {
+		    	  
+		        this.res = individuo;
+		        return true;
+		        
+		      }
+		      
+		    }
+		    
+		    return false;
+		    
+		  }
 }

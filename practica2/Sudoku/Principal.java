@@ -9,21 +9,21 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import com.qqwing.*;
 import com.qqwing.Difficulty;
 
 public class Principal {
   public static void main(String[] args) {
 
-    double ratioIndividuo = 0.05;
-    double ratioMutacion = 0.7;
-    double ratioHijo = 0.7;
+	double ratioHijo = 0.83;
+    double ratioMutacion = 0.9;
+    double ratioIndividuo = 0.07;
+    
     
     int tamPoblacion = 150;
     
-    int generaciones = 0;
-    int limiteGeneraciones = 80000;
+    int numIteraciones = 0;
+    int limIteraciones = 75000;
     
     boolean solEncontrada = false;
     
@@ -31,9 +31,9 @@ public class Principal {
 
     int pobXindiv = (int) Math.round(tamPoblacion*ratioIndividuo);
     
-    int generacionesSinMejora = 0;
+    int noMejora = 0;
     
-    List<String> datos = new ArrayList<>();
+    List<String> dLista = new ArrayList<>();
 
     Difficulty dificultad = Difficulty.EASY;
 
@@ -41,89 +41,101 @@ public class Principal {
     matrizSudo = SudokuGenerador.arrayToSudoku(lista);
 
     System.out.println("Sudoku generado: \n");
-    datos.add("Sudoku generado: ");
+    dLista.add("Sudoku generado: ");
     
     System.out.println(SudokuGenerador.dibujarMatriz(matrizSudo));
-    datos.add(SudokuGenerador.dibujarMatriz(matrizSudo));
+    dLista.add(SudokuGenerador.dibujarMatriz(matrizSudo));
     
     Individuo individuo = new Individuo(matrizSudo);
     
     System.out.println(" Fitness: " + individuo.getFitness()+" \n");
-    datos.add(" Fitness: " + individuo.getFitness()+"\n");
+    dLista.add(" Fitness: " + individuo.getFitness()+"\n");
     
     System.out.println(" ************************************ \n");
-    datos.add(" Fitness: " + individuo.getFitness()+"\n");
+    dLista.add(" Fitness: " + individuo.getFitness()+"\n");
 
-    AlgoritmoGenetico algoritmoGenetico = new AlgoritmoGenetico(matrizSudo, tamPoblacion, ratioHijo, ratioMutacion);
+    AlgoritmoGenetico alGen = new AlgoritmoGenetico(matrizSudo, tamPoblacion, ratioHijo, ratioMutacion);
 
-    while (generaciones < limiteGeneraciones && !solEncontrada) {
-      List<Individuo> nuevaPoblacion = new ArrayList<Individuo>();
+    while (numIteraciones < limIteraciones && !solEncontrada) {
+    	
+      List<Individuo> pNueva = new ArrayList<Individuo>();
 
 
-      List<Individuo> poblacionIgual = algoritmoGenetico.getPoblacion()
+      List<Individuo> noCambiaPoblacion = alGen.getPoblacion()
           .stream()
           .sorted(Comparator.comparingInt(Individuo::getFitness).reversed())
           .limit(pobXindiv)
           .collect(Collectors.toList());
       
-      for (Individuo individuoIgual : poblacionIgual) {
-        nuevaPoblacion.add(individuoIgual);
+     
+      if (noCambiaPoblacion.get(0).getFitness() == noCambiaPoblacion.get(1).getFitness()) {
+    	  
+        noMejora++;
+        
       }
-
-      if (poblacionIgual.get(0).getFitness() == poblacionIgual.get(1).getFitness()) {
-        generacionesSinMejora++;
-      }
+      
+      for (Individuo individuoIgual : noCambiaPoblacion) {
+    	  
+          pNueva.add(individuoIgual);
+          
+        }
 
       for (int i = pobXindiv; i < tamPoblacion; i += 2) {
 
-        Individuo individuoPadre1 = algoritmoGenetico.cogerIndividuo();
-        Individuo individuoPadre2 = algoritmoGenetico.cogerIndividuo();
+        Individuo padre1 = alGen.cogerIndividuo();
+        Individuo padre2 = alGen.cogerIndividuo();
 
-        Individuo[] nuevoIndividuos = algoritmoGenetico.MezclarIndividuos(individuoPadre1, individuoPadre2);
-        algoritmoGenetico.comprobarMutar(nuevoIndividuos[0]);
-        algoritmoGenetico.comprobarMutar(nuevoIndividuos[1]);
-        nuevaPoblacion.add(nuevoIndividuos[0]);
-        nuevaPoblacion.add(nuevoIndividuos[1]);
+        Individuo[] actIndividuos = alGen.MezclarIndividuos(padre1, padre2);
+        alGen.comprobarMutar(actIndividuos[0]);
+        alGen.comprobarMutar(actIndividuos[1]);
+        pNueva.add(actIndividuos[0]);
+        pNueva.add(actIndividuos[1]);
 
       }
 
 
-      algoritmoGenetico.setPoblacion(nuevaPoblacion);
+      alGen.setPoblacion(pNueva);
+      solEncontrada = alGen.buscarRes();
+      numIteraciones++;
 
-
-      solEncontrada = algoritmoGenetico.buscarRes();
-      generaciones++;
-
-      if (generacionesSinMejora > 5000) {
-        List<Individuo> poblacionRegenerada = new ArrayList<Individuo>();
-        poblacionRegenerada = algoritmoGenetico.generarPoblacion();
-        algoritmoGenetico.setPoblacion(poblacionRegenerada);
-        generacionesSinMejora = 0;
-        System.out.println("   ¡NUEVA POBLACION!   \n");
-        datos.add("   ¡¡NUEVA POBLACION!!   \n");
-      }
-
-      if (generaciones % 1500 == 0 || solEncontrada) {
+      if (noMejora > 3000) {
     	  
-        System.out.print(" Generación: " + generaciones+"\n");
-        datos.add(" Generación: " + generaciones+"\n");
+        List<Individuo> poblacionRegenerada = new ArrayList<Individuo>();
+        
+        poblacionRegenerada = alGen.generarPoblacion();
+        alGen.setPoblacion(poblacionRegenerada);
+        
+        System.out.println("   ¡NUEVA POBLACION!   \n");
+        dLista.add("   ¡¡NUEVA POBLACION!!   \n");
+        
+        noMejora = 0;
+        
+      }
+
+      if (solEncontrada || numIteraciones % 1500 == 0) {
+    	  
+        System.out.print(" Generación: " + numIteraciones+"\n");
+        dLista.add(" Generación: " + numIteraciones+"\n");
         
         int fitnessPromedio = 0;
         
-        for (Individuo var : algoritmoGenetico.getPoblacion()) {
-          fitnessPromedio += var.getFitness();
+        for (Individuo variable : alGen.getPoblacion()) {
+        	
+          fitnessPromedio = fitnessPromedio + variable.getFitness();
         }
         
-        System.out.print(" Media Fitness: " + fitnessPromedio/algoritmoGenetico.getPoblacion().size()+"\n");
-        datos.add(" Media Fitness: " + fitnessPromedio/algoritmoGenetico.getPoblacion().size()+"\n");
         
-        Individuo mejorIndividuo = algoritmoGenetico.buscarMejor();
+        System.out.print(" Media Fitness: " + fitnessPromedio/alGen.getPoblacion().size()+"\n");
+        dLista.add(" Media Fitness: " + fitnessPromedio/alGen.getPoblacion().size()+"\n");
+        
+        Individuo mejorIndividuo = alGen.buscarMejor();
         
         System.out.println(" Mejor Fitness: " + mejorIndividuo.getFitness()+"\n");
-        datos.add(" Mejor Fitness: " + mejorIndividuo.getFitness()+"\n");
+        dLista.add(" Mejor Fitness: " + mejorIndividuo.getFitness()+"\n");
         
         System.out.println(" ************************************ \n");
-        datos.add(" ************************************ \n");
+        dLista.add(" ************************************ \n");
+        
       }
     }
 
@@ -131,45 +143,50 @@ public class Principal {
 
     {
       System.out.println("SOLUCION ENCONTRADA\n");
-      datos.add("SOLUCION ENCONTRADA\n");
+      dLista.add("SOLUCION ENCONTRADA\n");
       
-      algoritmoGenetico.buscarRes();
+      alGen.buscarRes();
  
-      System.out.println(algoritmoGenetico.getRes().toString());
-      datos.add(algoritmoGenetico.getRes().toString());
+      System.out.println(alGen.getRes().toString());
+      dLista.add(alGen.getRes().toString());
       
     } else {
     	
       System.out.println("NO HA SIDO POSIBLE ENCONTRAR SOLUCION\n");
-      datos.add("NO HA SIDO POSIBLE ENCONTRAR SOLUCION\n");
+      dLista.add("NO HA SIDO POSIBLE ENCONTRAR SOLUCION\n");
       
-      Individuo mejorIndividuo = algoritmoGenetico.buscarMejor();
+      Individuo mejorIndividuo = alGen.buscarMejor();
       
       System.out.println(mejorIndividuo);
-      datos.add(mejorIndividuo.toString());
+      dLista.add(mejorIndividuo.toString());
       
       System.out.println("Fitness: " + mejorIndividuo.getFitness());    
-      datos.add("Fitness: " + mejorIndividuo.getFitness());
+      dLista.add("Fitness: " + mejorIndividuo.getFitness());
     }
     
     try {
+    	
       File file = new File("output"+".txt");
-      FileWriter w = new FileWriter(file, false);
-      BufferedWriter bufferWriter = new BufferedWriter(w);
+      FileWriter fWriter = new FileWriter(file, false);
+      BufferedWriter bWriter = new BufferedWriter(fWriter);
 
-      for (String fila : datos) {
-        bufferWriter.write(fila + "\n");
+      for (String fila : dLista) {
+    	  
+        bWriter.write(fila + "\n");
+        
       }
 
-      bufferWriter.close();
+      bWriter.close();
       System.out.println("El archivo ha sido creado");
 
 
-      bufferWriter.close();
+      bWriter.close();
       System.out.println("El archivo ha sido exportado");
 
     } catch (IOException error) {
+    	
       System.err.println("Error creando el archivo: " + error.getMessage());
+      
     }
 
   }

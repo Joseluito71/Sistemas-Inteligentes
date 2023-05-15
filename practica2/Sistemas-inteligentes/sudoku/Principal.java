@@ -76,13 +76,13 @@ public class Principal {
         poblacionRegenerada = algoritmoGenetico.generarPoblacion();
         algoritmoGenetico.setPoblacion(poblacionRegenerada);
         generacionesSinMejora = 0;
-        System.out.println("Población regenerada");
+        System.out.println("Poblacion regenerada");
         datos.add("Población regenerada");
         generacionesReales = 0;
       }
 
       if (generaciones % 500 == 0 || sol) {
-        System.out.print("Generación: " + generaciones);
+        System.out.print("Generacion: " + generaciones);
         int fitnessPromedio = 0;
         for (Individuo var : algoritmoGenetico.getPoblacion()) {
           fitnessPromedio += var.getFitness();
@@ -91,7 +91,7 @@ public class Principal {
             algoritmoGenetico.getPoblacion().size());
         Individuo mejorIndividuo = algoritmoGenetico.mejorIndividuo();
         System.out.println(" Mejor fitness: " + mejorIndividuo.getFitness());
-        datos.add("Generación: " + generaciones + "," + " Fitness promedio: " + fitnessPromedio /
+        datos.add("Generacion: " + generaciones + "," + " Fitness promedio: " + fitnessPromedio /
             algoritmoGenetico.getPoblacion().size() + "," + " Mejor fitness: " + mejorIndividuo.getFitness());
 
       }
@@ -100,18 +100,18 @@ public class Principal {
     if (sol)
 
     {
-      System.out.println("Solución encontrada");
+      System.out.println("Solucion encontrada");
       System.out.println(algoritmoGenetico.getSolucion());
-      System.out.println("Generación: " + generacionesReales);
-      datos.add("Solución encontrada");
+      System.out.println("Generacion: " + generacionesReales);
+      datos.add("Solucion encontrada");
       datos.add(algoritmoGenetico.getSolucion().toString());
-      datos.add("Generación: " + generacionesReales);
+      datos.add("Generacion: " + generacionesReales);
     } else {
-      System.out.println("Solución no encontrada");
+      System.out.println("Solucion no encontrada");
       Individuo mejorIndividuo = algoritmoGenetico.mejorIndividuo();
       System.out.println(mejorIndividuo);
       System.out.println("Fitness: " + mejorIndividuo.getFitness());
-      datos.add("Solución no encontrada");
+      datos.add("Solucion no encontrada");
       datos.add(mejorIndividuo.toString());
       datos.add("Fitness: " + mejorIndividuo.getFitness());
     }
@@ -124,9 +124,9 @@ public class Principal {
         bufferWriter.write(fila + "\n");
       }
       bufferWriter.close();
-      System.out.println("Archivo exportado correctamente.");
+      System.out.println("Archivo creado correctamente.");
     } catch (IOException e) {
-      System.err.println("Error al exportar archivo: " + e.getMessage());
+      System.err.println("Error al creado archivo: " + e.getMessage());
     }
 
   }

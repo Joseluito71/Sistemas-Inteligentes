@@ -159,7 +159,27 @@ public class AlgoritmoGenetico {
       individuo.getGenes()[iteratorFila][hueco2] = temp;
     }
   }
+  
+  public boolean buscarRes() {
+	    for (Individuo individuo : this.poblacion) {
+	      if (individuo.getFitness() == 162) {
+	        this.res = individuo;
+	        return true;
+	      }
+	    }
+	    return false;
+	  }
 
+	  public Individuo buscarMejor() {
+	    Individuo mejor = this.poblacion.get(0);
+	    for (Individuo individuo : this.poblacion) {
+	      if (individuo.getFitness() > mejor.getFitness()) {
+	        mejor = individuo;
+	      }
+	    }
+	    return mejor;
+	  }
+	  
   public void mutarIndividuo(Individuo individuo) {
     double randomRatio = Math.random();
     if (randomRatio < this.ratioMutacion) {
@@ -176,25 +196,7 @@ public class AlgoritmoGenetico {
   }
 
 
-  public boolean buscarRes() {
-    for (Individuo individuo : this.poblacion) {
-      if (individuo.getFitness() == 162) {
-        this.res = individuo;
-        return true;
-      }
-    }
-    return false;
-  }
 
-  public Individuo buscarMejor() {
-    Individuo mejor = this.poblacion.get(0);
-    for (Individuo individuo : this.poblacion) {
-      if (individuo.getFitness() > mejor.getFitness()) {
-        mejor = individuo;
-      }
-    }
-    return mejor;
-  }
 
   public Individuo cogerIndividuo() {
     int fitnessTotal = 0;

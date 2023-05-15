@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="qqwing134/test/java/|qqwing134/src/java/" kind="src" path=""/>
+	<classpathentry kind="src" path="qqwing134/src/java"/>
+	<classpathentry kind="src" path="qqwing134/test/java"/>
+	<classpathentry kind="output" path="qqwing134/target/classes"/>
+</classpath>

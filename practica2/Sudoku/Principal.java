@@ -106,13 +106,9 @@ public class Principal {
         generacionesReales = 0;
       }
 
-<<<<<<< HEAD:practica2/Sistemas-inteligentes/sudoku/Principal.java
-      if (generaciones % 500 == 0 || sol) {
-        System.out.print("Generacion: " + generaciones);
-=======
       if (generaciones % 500 == 0 || solucion) {
         System.out.print("Generación: " + generaciones);
->>>>>>> parent of 7980041 (push):practica2/Sistemas-inteligentes-elian/sudoku/Principal.java
+
         int fitnessPromedio = 0;
         for (Individuo var : algoritmoGenetico.getPoblacion()) {
           fitnessPromedio += var.getFitness();
@@ -156,14 +152,14 @@ public class Principal {
       for (String fila : datos) {
         bufferWriter.write(fila + "\n");
       }
-<<<<<<< HEAD:practica2/Sistemas-inteligentes/sudoku/Principal.java
+
       bufferWriter.close();
       System.out.println("Archivo creado correctamente.");
-=======
+
       // Cerrar BufferedWriter
-      bufferedWriter.close();
+      bufferWriter.close();
       System.out.println("Archivo exportado correctamente.");
->>>>>>> parent of 7980041 (push):practica2/Sistemas-inteligentes-elian/sudoku/Principal.java
+
     } catch (IOException e) {
       System.err.println("Error al creado archivo: " + e.getMessage());
     }

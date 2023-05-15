@@ -28,7 +28,6 @@ public class Principal {
     // generacion llamad elite
     int elite = (int) Math.round(poblacionSize * tasaIndividuo);
     int generacionesSinMejora = 0;
-    int generacionesReales = 0;
     List<String> datos = new ArrayList<>();
 
     Difficulty difficulty = Difficulty.EASY;
@@ -37,26 +36,22 @@ public class Principal {
     // matrixSudoku = SudokuGenerador.arrayToMatrix(sudoku);
     matrixSudoku = SudokuGenerador.computePuzzleByDifficultyAndFitness(difficulty, 75, 80);
 
-    System.out.println("Sudoku generado: ");
+    System.out.println("Sudoku generado: \n");
     System.out.println(SudokuGenerador.printMatrix(matrixSudoku));
     datos.add("Sudoku generado: ");
     datos.add(SudokuGenerador.printMatrix(matrixSudoku));
     Individuo individuo = new Individuo(matrixSudoku);
-    System.out.println("Fitness: " + individuo.getFitness());
-    datos.add("Fitness: " + individuo.getFitness());
+    System.out.println(" Fitness: " + individuo.getFitness()+" \n");
+    datos.add(" Fitness: " + individuo.getFitness()+"\n");
+    System.out.println(" ************************************ \n");
 
-    // intstaciar el algoritmoGenetico con el sudoku original, el tamano de la
-    // poblacion
-    // y las tasas de cruce y mutacion
     AlgoritmoGenetico algoritmoGenetico = new AlgoritmoGenetico(matrixSudoku,
         poblacionSize, tasaCruce, tasaMutacion);
 
     while (generaciones < limiteGeneraciones && !solucion) {
       List<Individuo> nuevaPoblacion = new ArrayList<Individuo>();
 
-      // Ordenar población de mayor a menor fitness para seleccionar un porcentage de
-      // los mejores
-      // y agregarlos a la nueva población
+
       List<Individuo> poblacionIgual = algoritmoGenetico.getPoblacion()
           .stream()
           .sorted(Comparator.comparingInt(Individuo::getFitness).reversed())
@@ -65,17 +60,13 @@ public class Principal {
       for (Individuo individuoIgual : poblacionIgual) {
         nuevaPoblacion.add(individuoIgual);
       }
-      // sumar 1 al numero de generaciones sin mejora si los dos mejores individuos
-      // tienen el mismo fitness
+
       if (poblacionIgual.get(0).getFitness() == poblacionIgual.get(1).getFitness()) {
         generacionesSinMejora++;
       }
 
-      // hacer el proceso cruce y mutación de los individuos restantes por completar
-      // el numero
-      // de la población
       for (int i = elite; i < poblacionSize; i += 2) {
-        // Seleccionar individuo
+
         Individuo individuoPadre1 = algoritmoGenetico.cogerIndividuo();
         Individuo individuoPadre2 = algoritmoGenetico.cogerIndividuo();
 
@@ -87,57 +78,53 @@ public class Principal {
 
       }
 
-      // setear la nueva población
+
       algoritmoGenetico.setPoblacion(nuevaPoblacion);
 
-      // Evaluar si el individuo es solución
+
       solucion = algoritmoGenetico.buscarRes();
       generaciones++;
-      generacionesReales++;
 
-      // si no hay mejora en 5000 generaciones, se regenera la población
       if (generacionesSinMejora > 5000) {
         List<Individuo> poblacionRegenerada = new ArrayList<Individuo>();
         poblacionRegenerada = algoritmoGenetico.generarPoblacion();
         algoritmoGenetico.setPoblacion(poblacionRegenerada);
         generacionesSinMejora = 0;
-        System.out.println("Poblacion regenerada");
-        datos.add("Población regenerada");
-        generacionesReales = 0;
+        System.out.println("   ¡NUEVA POBLACION!   \n");
+        datos.add("   ¡¡NUEVA POBLACION!!   \n");
       }
 
-      if (generaciones % 500 == 0 || solucion) {
-        System.out.print("Generación: " + generaciones);
-
+      if (generaciones % 1500 == 0 || solucion) {
+        System.out.print(" Generación: " + generaciones+"\n");
+        datos.add(" Generación: " + generaciones+"\n");
         int fitnessPromedio = 0;
         for (Individuo var : algoritmoGenetico.getPoblacion()) {
           fitnessPromedio += var.getFitness();
         }
-        System.out.print(" Fitness promedio: " + fitnessPromedio /
-            algoritmoGenetico.getPoblacion().size());
+        System.out.print(" Media Fitness: " + fitnessPromedio/algoritmoGenetico.getPoblacion().size()+"\n");
+        datos.add(" Media Fitness: " + fitnessPromedio/algoritmoGenetico.getPoblacion().size()+"\n");
         Individuo mejorIndividuo = algoritmoGenetico.buscarMejor();
-        System.out.println(" Mejor fitness: " + mejorIndividuo.getFitness());
-        datos.add("Generacion: " + generaciones + "," + " Fitness promedio: " + fitnessPromedio /
-            algoritmoGenetico.getPoblacion().size() + "," + " Mejor fitness: " + mejorIndividuo.getFitness());
-
+        System.out.println(" Mejor Fitness: " + mejorIndividuo.getFitness()+"\n");
+        datos.add(" Mejor Fitness: " + mejorIndividuo.getFitness()+"\n");
+        System.out.println(" ************************************ \n");
+        datos.add(" ************************************ \n");
       }
     }
 
     if (solucion)
 
     {
-      System.out.println("Solucion encontrada");
-      System.out.println(algoritmoGenetico.buscarRes());
-      System.out.println("Generacion: " + generacionesReales);
-      datos.add("Solucion encontrada");
+      System.out.println("SOLUCION ENCONTRADA\n");
+      algoritmoGenetico.buscarRes();
+      datos.add("SOLUCION ENCONTRADA\n");
+      System.out.println(algoritmoGenetico.getRes().toString());
       datos.add(algoritmoGenetico.getRes().toString());
-      datos.add("Generacion: " + generacionesReales);
     } else {
-      System.out.println("Solucion no encontrada");
+      System.out.println("NO HA SIDO POSIBLE ENCONTRAR SOLUCION\n");
       Individuo mejorIndividuo = algoritmoGenetico.buscarMejor();
       System.out.println(mejorIndividuo);
       System.out.println("Fitness: " + mejorIndividuo.getFitness());
-      datos.add("Solucion no encontrada");
+      datos.add("NO HA SIDO POSIBLE ENCONTRAR SOLUCION\n");
       datos.add(mejorIndividuo.toString());
       datos.add("Fitness: " + mejorIndividuo.getFitness());
     }
@@ -146,22 +133,19 @@ public class Principal {
       FileWriter w = new FileWriter(file, false);
       BufferedWriter bufferWriter = new BufferedWriter(w);
 
-      // Escribir encabezados de las columnas
-      // bufferedWriter.write("Generacion,Fitness promedio,Mejor fitness\n");
-
       for (String fila : datos) {
         bufferWriter.write(fila + "\n");
       }
 
       bufferWriter.close();
-      System.out.println("Archivo creado correctamente.");
+      System.out.println("El archivo ha sido creado");
 
-      // Cerrar BufferedWriter
+
       bufferWriter.close();
-      System.out.println("Archivo exportado correctamente.");
+      System.out.println("El archivo ha sido exportado");
 
     } catch (IOException e) {
-      System.err.println("Error al creado archivo: " + e.getMessage());
+      System.err.println("Error creando el archivo: " + e.getMessage());
     }
 
   }

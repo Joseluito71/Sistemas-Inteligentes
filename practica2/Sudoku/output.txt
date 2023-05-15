@@ -1,67 +1,487 @@
 Sudoku generado: 
--------------------------
-| 2 0 0 | 0 0 0 | 8 0 0 |
-| 3 1 0 | 0 0 0 | 9 6 0 |
-| 9 0 4 | 8 0 0 | 0 0 0 |
--------------------------
-| 1 0 5 | 0 6 8 | 0 0 0 |
-| 8 0 0 | 0 0 1 | 0 0 0 |
-| 4 0 0 | 9 0 0 | 0 0 0 |
--------------------------
-| 7 0 0 | 0 0 0 | 0 9 0 |
-| 6 0 3 | 5 0 7 | 1 2 8 |
-| 5 0 0 | 0 3 0 | 6 7 4 |
--------------------------
-
-Fitness: 79
-Generacion: 500, Fitness promedio: 146, Mejor fitness: 153
-Generacion: 1000, Fitness promedio: 147, Mejor fitness: 156
-Generacion: 1500, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 2000, Fitness promedio: 148, Mejor fitness: 158
-Generacion: 2500, Fitness promedio: 150, Mejor fitness: 158
-Generacion: 3000, Fitness promedio: 150, Mejor fitness: 160
-Generacion: 3500, Fitness promedio: 153, Mejor fitness: 160
-Generacion: 4000, Fitness promedio: 153, Mejor fitness: 160
-Generacion: 4500, Fitness promedio: 151, Mejor fitness: 160
-Generacion: 5000, Fitness promedio: 152, Mejor fitness: 160
-Población regenerada
-Generacion: 5500, Fitness promedio: 149, Mejor fitness: 157
-Generacion: 6000, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 6500, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 7000, Fitness promedio: 151, Mejor fitness: 158
-Generacion: 7500, Fitness promedio: 150, Mejor fitness: 158
-Generacion: 8000, Fitness promedio: 151, Mejor fitness: 158
-Generacion: 8500, Fitness promedio: 150, Mejor fitness: 158
-Generacion: 9000, Fitness promedio: 150, Mejor fitness: 158
-Generacion: 9500, Fitness promedio: 151, Mejor fitness: 158
-Generacion: 10000, Fitness promedio: 151, Mejor fitness: 158
-Población regenerada
-Generacion: 10500, Fitness promedio: 149, Mejor fitness: 154
-Generacion: 11000, Fitness promedio: 151, Mejor fitness: 158
-Generacion: 11500, Fitness promedio: 151, Mejor fitness: 158
-Generacion: 12000, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 12500, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 13000, Fitness promedio: 152, Mejor fitness: 158
-Generacion: 13500, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 14000, Fitness promedio: 151, Mejor fitness: 158
-Generacion: 14500, Fitness promedio: 150, Mejor fitness: 158
-Generacion: 15000, Fitness promedio: 150, Mejor fitness: 158
-Población regenerada
-Generacion: 15500, Fitness promedio: 149, Mejor fitness: 158
-Generacion: 15586, Fitness promedio: 150, Mejor fitness: 162
-Solucion encontrada
 █████████████████████████
-█ 2 5 7 █ 3 1 6 █ 8 4 9 █
-█ 3 1 8 █ 7 9 4 █ 2 6 5 █
-█ 9 6 4 █ 8 2 5 █ 7 1 3 █
+█ 0 0 0 █ 0 9 0 █ 5 1 0 █
+█ 0 0 0 █ 0 7 5 █ 0 3 0 █
+█ 0 0 0 █ 0 8 0 █ 0 0 6 █
 █████████████████████████
-█ 1 2 5 █ 4 6 8 █ 9 3 7 █
-█ 8 3 9 █ 2 7 1 █ 4 5 6 █
-█ 4 7 6 █ 9 5 3 █ 1 8 2 █
+█ 5 9 2 █ 0 0 7 █ 0 4 0 █
+█ 4 1 3 █ 8 0 0 █ 0 0 0 █
+█ 7 8 6 █ 0 0 4 █ 9 0 0 █
 █████████████████████████
-█ 7 4 3 █ 6 8 2 █ 5 9 1 █
-█ 6 9 1 █ 5 4 7 █ 3 2 8 █
-█ 5 8 2 █ 1 3 9 █ 6 7 4 █
+█ 0 0 0 █ 0 0 0 █ 6 7 1 █
+█ 0 0 0 █ 0 6 1 █ 3 0 0 █
+█ 0 0 0 █ 0 0 0 █ 0 0 5 █
 █████████████████████████
 
-Generacion: 430
+ Fitness: 75
+ Generación: 1500
+
+ Media Fitness: 151
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 3000
+
+ Media Fitness: 153
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 4500
+
+ Media Fitness: 154
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 6000
+
+ Media Fitness: 146
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 7500
+
+ Media Fitness: 153
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 9000
+
+ Media Fitness: 151
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 10500
+
+ Media Fitness: 147
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 12000
+
+ Media Fitness: 148
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 13500
+
+ Media Fitness: 146
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 15000
+
+ Media Fitness: 148
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 16500
+
+ Media Fitness: 149
+
+ Mejor Fitness: 157
+
+ ************************************ 
+
+ Generación: 18000
+
+ Media Fitness: 149
+
+ Mejor Fitness: 157
+
+ ************************************ 
+
+ Generación: 19500
+
+ Media Fitness: 150
+
+ Mejor Fitness: 157
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 21000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 157
+
+ ************************************ 
+
+ Generación: 22500
+
+ Media Fitness: 149
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 24000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 25500
+
+ Media Fitness: 148
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 27000
+
+ Media Fitness: 148
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+ Generación: 28500
+
+ Media Fitness: 150
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+ Generación: 30000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 31500
+
+ Media Fitness: 151
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 33000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 34500
+
+ Media Fitness: 151
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 36000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 37500
+
+ Media Fitness: 151
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 39000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 40500
+
+ Media Fitness: 143
+
+ Mejor Fitness: 152
+
+ ************************************ 
+
+ Generación: 42000
+
+ Media Fitness: 147
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 43500
+
+ Media Fitness: 148
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+ Generación: 45000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 157
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 46500
+
+ Media Fitness: 151
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 48000
+
+ Media Fitness: 152
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 49500
+
+ Media Fitness: 153
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 51000
+
+ Media Fitness: 146
+
+ Mejor Fitness: 155
+
+ ************************************ 
+
+ Generación: 52500
+
+ Media Fitness: 147
+
+ Mejor Fitness: 155
+
+ ************************************ 
+
+ Generación: 54000
+
+ Media Fitness: 148
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+ Generación: 55500
+
+ Media Fitness: 147
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 57000
+
+ Media Fitness: 151
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 58500
+
+ Media Fitness: 149
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 60000
+
+ Media Fitness: 149
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 61500
+
+ Media Fitness: 151
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 63000
+
+ Media Fitness: 150
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+ Generación: 64500
+
+ Media Fitness: 150
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 66000
+
+ Media Fitness: 146
+
+ Mejor Fitness: 154
+
+ ************************************ 
+
+ Generación: 67500
+
+ Media Fitness: 148
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+ Generación: 69000
+
+ Media Fitness: 147
+
+ Mejor Fitness: 156
+
+ ************************************ 
+
+ Generación: 70500
+
+ Media Fitness: 150
+
+ Mejor Fitness: 158
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 72000
+
+ Media Fitness: 148
+
+ Mejor Fitness: 155
+
+ ************************************ 
+
+ Generación: 73500
+
+ Media Fitness: 147
+
+ Mejor Fitness: 155
+
+ ************************************ 
+
+ Generación: 75000
+
+ Media Fitness: 147
+
+ Mejor Fitness: 155
+
+ ************************************ 
+
+   ¡¡NUEVA POBLACION!!   
+
+ Generación: 76500
+
+ Media Fitness: 150
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 78000
+
+ Media Fitness: 151
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+ Generación: 79500
+
+ Media Fitness: 150
+
+ Mejor Fitness: 160
+
+ ************************************ 
+
+NO HA SIDO POSIBLE ENCONTRAR SOLUCION
+
+█████████████████████████
+█ 2 7 4 █ 3 9 6 █ 5 1 8 █
+█ 8 6 1 █ 4 7 5 █ 2 3 9 █
+█ 3 5 9 █ 1 8 2 █ 4 7 6 █
+█████████████████████████
+█ 5 9 2 █ 6 1 7 █ 8 4 3 █
+█ 4 1 3 █ 8 2 9 █ 7 6 5 █
+█ 7 8 6 █ 5 3 4 █ 9 2 1 █
+█████████████████████████
+█ 1 3 5 █ 9 4 8 █ 6 7 2 █
+█ 9 2 8 █ 7 6 1 █ 3 5 4 █
+█ 6 4 7 █ 2 5 3 █ 1 9 8 █
+█████████████████████████
+
+Fitness: 160

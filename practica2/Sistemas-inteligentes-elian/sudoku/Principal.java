@@ -16,20 +16,25 @@ import com.qqwing.Difficulty;
 public class Principal {
   public static void main(String[] args) {
 
-    double ratioIndividuo = 0.05;
-    double ratioMutacion = 0.7;
-    double ratioHijo = 0.7;
-    int poblacionSz = 150;
+    double tasaIndividuo = 0.05;
+    double tasaMutacion = 0.7;
+    double tasaCruce = 0.7;
+    int poblacionSize = 150;
     int generaciones = 0;
     int limiteGeneraciones = 80000;
-    boolean sol = false;
+    boolean solucion = false;
     int[][] matrixSudoku;
-    int elite = (int) Math.round(poblacionSz * ratioIndividuo);
+    // calcular el numero de mejores individuos que se seleccionara para la nueva
+    // generacion llamad elite
+    int elite = (int) Math.round(poblacionSize * tasaIndividuo);
     int generacionesSinMejora = 0;
     int generacionesReales = 0;
     List<String> datos = new ArrayList<>();
 
     Difficulty difficulty = Difficulty.EASY;
+    // generar sudoku solo por dificultad
+    // int[] sudoku = SudokuGenerador.computePuzzleByDifficulty(difficulty);
+    // matrixSudoku = SudokuGenerador.arrayToMatrix(sudoku);
     matrixSudoku = SudokuGenerador.computePuzzleByDifficultyAndFitness(difficulty, 75, 80);
 
     System.out.println("Sudoku generado: ");
@@ -39,11 +44,19 @@ public class Principal {
     Individuo individuo = new Individuo(matrixSudoku);
     System.out.println("Fitness: " + individuo.getFitness());
     datos.add("Fitness: " + individuo.getFitness());
-    AlgoritmoGenetico algoritmoGenetico = new AlgoritmoGenetico(matrixSudoku,
-        poblacionSz, ratioHijo, ratioMutacion);
 
-    while (generaciones < limiteGeneraciones && !sol) {
+    // intstaciar el algoritmoGenetico con el sudoku original, el tamano de la
+    // poblacion
+    // y las tasas de cruce y mutacion
+    AlgoritmoGenetico algoritmoGenetico = new AlgoritmoGenetico(matrixSudoku,
+        poblacionSize, tasaCruce, tasaMutacion);
+
+    while (generaciones < limiteGeneraciones && !solucion) {
       List<Individuo> nuevaPoblacion = new ArrayList<Individuo>();
+
+      // Ordenar población de mayor a menor fitness para seleccionar un porcentage de
+      // los mejores
+      // y agregarlos a la nueva población
       List<Individuo> poblacionIgual = algoritmoGenetico.getPoblacion()
           .stream()
           .sorted(Comparator.comparingInt(Individuo::getFitness).reversed())
@@ -52,10 +65,17 @@ public class Principal {
       for (Individuo individuoIgual : poblacionIgual) {
         nuevaPoblacion.add(individuoIgual);
       }
+      // sumar 1 al numero de generaciones sin mejora si los dos mejores individuos
+      // tienen el mismo fitness
       if (poblacionIgual.get(0).getFitness() == poblacionIgual.get(1).getFitness()) {
         generacionesSinMejora++;
       }
-      for (int i = elite; i < poblacionSz; i += 2) {
+
+      // hacer el proceso cruce y mutación de los individuos restantes por completar
+      // el numero
+      // de la población
+      for (int i = elite; i < poblacionSize; i += 2) {
+        // Seleccionar individuo
         Individuo individuoPadre1 = algoritmoGenetico.seleccionarIndividuo();
         Individuo individuoPadre2 = algoritmoGenetico.seleccionarIndividuo();
 
@@ -67,10 +87,15 @@ public class Principal {
 
       }
 
+      // setear la nueva población
       algoritmoGenetico.setPoblacion(nuevaPoblacion);
-      sol = algoritmoGenetico.buscarSolucion();
+
+      // Evaluar si el individuo es solución
+      solucion = algoritmoGenetico.buscarSolucion();
       generaciones++;
       generacionesReales++;
+
+      // si no hay mejora en 5000 generaciones, se regenera la población
       if (generacionesSinMejora > 5000) {
         List<Individuo> poblacionRegenerada = new ArrayList<Individuo>();
         poblacionRegenerada = algoritmoGenetico.generarPoblacion();
@@ -81,8 +106,13 @@ public class Principal {
         generacionesReales = 0;
       }
 
+<<<<<<< HEAD:practica2/Sistemas-inteligentes/sudoku/Principal.java
       if (generaciones % 500 == 0 || sol) {
         System.out.print("Generacion: " + generaciones);
+=======
+      if (generaciones % 500 == 0 || solucion) {
+        System.out.print("Generación: " + generaciones);
+>>>>>>> parent of 7980041 (push):practica2/Sistemas-inteligentes-elian/sudoku/Principal.java
         int fitnessPromedio = 0;
         for (Individuo var : algoritmoGenetico.getPoblacion()) {
           fitnessPromedio += var.getFitness();
@@ -97,7 +127,7 @@ public class Principal {
       }
     }
 
-    if (sol)
+    if (solucion)
 
     {
       System.out.println("Solucion encontrada");
@@ -120,11 +150,20 @@ public class Principal {
       FileWriter w = new FileWriter(file, false);
       BufferedWriter bufferWriter = new BufferedWriter(w);
 
+      // Escribir encabezados de las columnas
+      // bufferedWriter.write("Generacion,Fitness promedio,Mejor fitness\n");
+
       for (String fila : datos) {
         bufferWriter.write(fila + "\n");
       }
+<<<<<<< HEAD:practica2/Sistemas-inteligentes/sudoku/Principal.java
       bufferWriter.close();
       System.out.println("Archivo creado correctamente.");
+=======
+      // Cerrar BufferedWriter
+      bufferedWriter.close();
+      System.out.println("Archivo exportado correctamente.");
+>>>>>>> parent of 7980041 (push):practica2/Sistemas-inteligentes-elian/sudoku/Principal.java
     } catch (IOException e) {
       System.err.println("Error al creado archivo: " + e.getMessage());
     }

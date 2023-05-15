@@ -1,5 +1,5 @@
 
-public class Principal {
+public class Pmain {
 
 	public static void main(String[] args) {
 		

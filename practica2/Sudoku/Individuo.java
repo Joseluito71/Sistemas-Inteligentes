@@ -26,49 +26,27 @@ public class Individuo implements Comparable<Individuo> {
 
  
   private int calculoFitness() {
-	  
     int fitness = 0;
-
     for (int i = 0; i < 9; i++) {
-    	
       int[] columnas = new int[9];
-      
       for (int j = 0; j < 9; j++) {
-    	  
-        columnas[j] = genes[j][i];
-        
-      }
-      
+        columnas[j] = genes[j][i];      
+      } 
       fitness = fitness + valoresUnicos(columnas);
-      
     }
-
- 
     for (int i = 0; i < 9; i += 3) {
-    	
-      for (int j = 0; j < 9; j += 3) {
-    	  
-        int[] tresPorTres = new int[9];
-        
+      for (int j = 0; j < 9; j += 3) {  
+        int[] tresPorTres = new int[9]; 
         int indice = 0;
-        
-        for (int k = i; k < i + 3; k++) {
-        	
-          for (int l = j; l < j + 3; l++) {
-        	  
+        for (int k = i; k < i + 3; k++) {        	
+          for (int l = j; l < j + 3; l++) {       	  
             tresPorTres[indice] = genes[k][l];
-            indice++;
-            
-          }
-          
-        }
-        
-        fitness = fitness + valoresUnicos(tresPorTres);
-        
-      }
-      
+            indice++;          
+          }         
+        }        
+        fitness = fitness + valoresUnicos(tresPorTres);      
+      }   
     }
-
     return fitness;
   }
 

@@ -1,27 +1,27 @@
 Sudoku generado: 
 █████████████████████████
-█ 0 9 0 █ 4 6 1 █ 0 0 0 █
-█ 0 0 0 █ 0 0 0 █ 0 0 0 █
-█ 0 0 0 █ 0 0 0 █ 4 3 0 █
+█ 7 0 0 █ 8 0 2 █ 0 3 1 █
+█ 0 2 0 █ 1 0 0 █ 0 0 5 █
+█ 0 1 0 █ 3 0 0 █ 4 0 0 █
 █████████████████████████
-█ 0 0 0 █ 5 0 4 █ 0 7 0 █
-█ 0 0 0 █ 0 0 3 █ 1 5 0 █
-█ 0 5 0 █ 1 9 0 █ 0 2 0 █
+█ 0 0 7 █ 0 0 4 █ 2 6 0 █
+█ 0 0 0 █ 0 0 5 █ 0 0 0 █
+█ 0 0 0 █ 2 7 0 █ 0 4 0 █
 █████████████████████████
-█ 0 0 0 █ 0 0 2 █ 0 0 3 █
-█ 0 6 5 █ 0 0 0 █ 7 0 0 █
-█ 9 1 0 █ 7 0 0 █ 5 0 0 █
+█ 0 0 0 █ 5 0 0 █ 6 0 0 █
+█ 0 3 6 █ 0 0 1 █ 0 0 2 █
+█ 0 0 0 █ 0 6 0 █ 0 0 0 █
 █████████████████████████
 
- Fitness: 68
+ Fitness: 70
 
- Fitness: 68
+ Fitness: 70
 
  Generación: 1500
 
  Media Fitness: 148
 
- Mejor Fitness: 158
+ Mejor Fitness: 157
 
  ************************************ 
 
@@ -29,7 +29,7 @@ Sudoku generado:
 
  Media Fitness: 149
 
- Mejor Fitness: 158
+ Mejor Fitness: 157
 
  ************************************ 
 
@@ -37,17 +37,17 @@ Sudoku generado:
 
  Generación: 4500
 
- Media Fitness: 150
+ Media Fitness: 147
 
- Mejor Fitness: 160
+ Mejor Fitness: 157
 
  ************************************ 
 
  Generación: 6000
 
- Media Fitness: 152
+ Media Fitness: 146
 
- Mejor Fitness: 160
+ Mejor Fitness: 157
 
  ************************************ 
 
@@ -65,7 +65,7 @@ Sudoku generado:
 
  Media Fitness: 150
 
- Mejor Fitness: 160
+ Mejor Fitness: 158
 
  ************************************ 
 
@@ -73,17 +73,17 @@ Sudoku generado:
 
  Generación: 10500
 
- Media Fitness: 150
+ Media Fitness: 149
 
- Mejor Fitness: 160
+ Mejor Fitness: 158
 
  ************************************ 
 
  Generación: 12000
 
- Media Fitness: 151
+ Media Fitness: 149
 
- Mejor Fitness: 160
+ Mejor Fitness: 158
 
  ************************************ 
 
@@ -93,15 +93,15 @@ Sudoku generado:
 
  Media Fitness: 148
 
- Mejor Fitness: 157
+ Mejor Fitness: 156
 
  ************************************ 
 
  Generación: 15000
 
- Media Fitness: 147
+ Media Fitness: 148
 
- Mejor Fitness: 157
+ Mejor Fitness: 156
 
  ************************************ 
 
@@ -109,17 +109,17 @@ Sudoku generado:
 
  Generación: 16500
 
- Media Fitness: 150
+ Media Fitness: 149
 
- Mejor Fitness: 158
+ Mejor Fitness: 160
 
  ************************************ 
 
  Generación: 18000
 
- Media Fitness: 147
+ Media Fitness: 151
 
- Mejor Fitness: 158
+ Mejor Fitness: 160
 
  ************************************ 
 
@@ -127,17 +127,17 @@ Sudoku generado:
 
  Generación: 19500
 
- Media Fitness: 147
+ Media Fitness: 149
 
- Mejor Fitness: 156
+ Mejor Fitness: 157
 
  ************************************ 
 
  Generación: 21000
 
- Media Fitness: 147
+ Media Fitness: 149
 
- Mejor Fitness: 156
+ Mejor Fitness: 157
 
  ************************************ 
 
@@ -145,17 +145,17 @@ Sudoku generado:
 
  Generación: 22500
 
- Media Fitness: 150
+ Media Fitness: 148
 
- Mejor Fitness: 158
+ Mejor Fitness: 155
 
  ************************************ 
 
  Generación: 24000
 
- Media Fitness: 150
+ Media Fitness: 147
 
- Mejor Fitness: 158
+ Mejor Fitness: 155
 
  ************************************ 
 
@@ -163,17 +163,17 @@ Sudoku generado:
 
  Generación: 25500
 
- Media Fitness: 152
+ Media Fitness: 144
 
- Mejor Fitness: 160
+ Mejor Fitness: 154
 
  ************************************ 
 
  Generación: 27000
 
- Media Fitness: 150
+ Media Fitness: 149
 
- Mejor Fitness: 160
+ Mejor Fitness: 158
 
  ************************************ 
 
@@ -181,17 +181,17 @@ Sudoku generado:
 
  Generación: 28500
 
- Media Fitness: 151
+ Media Fitness: 141
 
- Mejor Fitness: 159
+ Mejor Fitness: 150
 
  ************************************ 
 
  Generación: 30000
 
- Media Fitness: 148
+ Media Fitness: 147
 
- Mejor Fitness: 159
+ Mejor Fitness: 155
 
  ************************************ 
 
@@ -199,17 +199,17 @@ Sudoku generado:
 
  Generación: 31500
 
- Media Fitness: 145
+ Media Fitness: 148
 
- Mejor Fitness: 155
+ Mejor Fitness: 158
 
  ************************************ 
 
  Generación: 33000
 
- Media Fitness: 147
+ Media Fitness: 150
 
- Mejor Fitness: 156
+ Mejor Fitness: 158
 
  ************************************ 
 
@@ -217,9 +217,9 @@ Sudoku generado:
 
  Generación: 34500
 
- Media Fitness: 149
+ Media Fitness: 147
 
- Mejor Fitness: 158
+ Mejor Fitness: 155
 
  ************************************ 
 
@@ -227,7 +227,7 @@ Sudoku generado:
 
  Media Fitness: 149
 
- Mejor Fitness: 158
+ Mejor Fitness: 156
 
  ************************************ 
 
@@ -237,7 +237,7 @@ Sudoku generado:
 
  Media Fitness: 147
 
- Mejor Fitness: 155
+ Mejor Fitness: 158
 
  ************************************ 
 
@@ -245,7 +245,7 @@ Sudoku generado:
 
  Media Fitness: 147
 
- Mejor Fitness: 155
+ Mejor Fitness: 158
 
  ************************************ 
 
@@ -253,15 +253,15 @@ Sudoku generado:
 
  Generación: 40500
 
- Media Fitness: 149
+ Media Fitness: 147
 
- Mejor Fitness: 156
+ Mejor Fitness: 155
 
  ************************************ 
 
  Generación: 42000
 
- Media Fitness: 147
+ Media Fitness: 149
 
  Mejor Fitness: 156
 
@@ -271,17 +271,17 @@ Sudoku generado:
 
  Generación: 43500
 
- Media Fitness: 146
+ Media Fitness: 149
 
- Mejor Fitness: 154
+ Mejor Fitness: 157
 
  ************************************ 
 
  Generación: 45000
 
- Media Fitness: 149
+ Media Fitness: 147
 
- Mejor Fitness: 158
+ Mejor Fitness: 157
 
  ************************************ 
 
@@ -289,7 +289,7 @@ Sudoku generado:
 
  Generación: 46500
 
- Media Fitness: 150
+ Media Fitness: 149
 
  Mejor Fitness: 158
 
@@ -307,17 +307,17 @@ Sudoku generado:
 
  Generación: 49500
 
- Media Fitness: 147
+ Media Fitness: 150
 
- Mejor Fitness: 156
+ Mejor Fitness: 160
 
  ************************************ 
 
  Generación: 51000
 
- Media Fitness: 148
+ Media Fitness: 153
 
- Mejor Fitness: 157
+ Mejor Fitness: 160
 
  ************************************ 
 
@@ -325,7 +325,7 @@ Sudoku generado:
 
  Generación: 52500
 
- Media Fitness: 147
+ Media Fitness: 146
 
  Mejor Fitness: 156
 
@@ -333,9 +333,9 @@ Sudoku generado:
 
  Generación: 54000
 
- Media Fitness: 150
+ Media Fitness: 147
 
- Mejor Fitness: 158
+ Mejor Fitness: 156
 
  ************************************ 
 
@@ -343,93 +343,13 @@ Sudoku generado:
 
  Generación: 55500
 
- Media Fitness: 149
+ Media Fitness: 147
 
- Mejor Fitness: 156
+ Mejor Fitness: 154
 
  ************************************ 
 
  Generación: 57000
-
- Media Fitness: 147
-
- Mejor Fitness: 157
-
- ************************************ 
-
-   ¡¡NUEVA POBLACION!!   
-
- Generación: 58500
-
- Media Fitness: 145
-
- Mejor Fitness: 156
-
- ************************************ 
-
- Generación: 60000
-
- Media Fitness: 146
-
- Mejor Fitness: 156
-
- ************************************ 
-
-   ¡¡NUEVA POBLACION!!   
-
- Generación: 61500
-
- Media Fitness: 146
-
- Mejor Fitness: 156
-
- ************************************ 
-
- Generación: 63000
-
- Media Fitness: 147
-
- Mejor Fitness: 158
-
- ************************************ 
-
-   ¡¡NUEVA POBLACION!!   
-
- Generación: 64500
-
- Media Fitness: 142
-
- Mejor Fitness: 151
-
- ************************************ 
-
- Generación: 66000
-
- Media Fitness: 148
-
- Mejor Fitness: 158
-
- ************************************ 
-
-   ¡¡NUEVA POBLACION!!   
-
- Generación: 67500
-
- Media Fitness: 124
-
- Mejor Fitness: 137
-
- ************************************ 
-
- Generación: 69000
-
- Media Fitness: 146
-
- Mejor Fitness: 156
-
- ************************************ 
-
- Generación: 70500
 
  Media Fitness: 150
 
@@ -439,46 +359,45 @@ Sudoku generado:
 
    ¡¡NUEVA POBLACION!!   
 
- Generación: 72000
+ Generación: 58500
 
- Media Fitness: 149
+ Media Fitness: 146
 
- Mejor Fitness: 158
+ Mejor Fitness: 156
 
  ************************************ 
 
- Generación: 73500
+ Generación: 60000
 
- Media Fitness: 149
+ Media Fitness: 145
 
- Mejor Fitness: 158
+ Mejor Fitness: 156
 
  ************************************ 
 
    ¡¡NUEVA POBLACION!!   
 
- Generación: 75000
+ Generación: 61239
 
- Media Fitness: 149
+ Media Fitness: 150
 
- Mejor Fitness: 160
+ Mejor Fitness: 162
 
  ************************************ 
 
-NO HA SIDO POSIBLE ENCONTRAR SOLUCION
+SOLUCION ENCONTRADA
 
 █████████████████████████
-█ 3 9 2 █ 4 5 1 █ 6 8 7 █
-█ 8 7 1 █ 2 3 6 █ 4 9 5 █
-█ 6 5 4 █ 8 7 9 █ 2 3 1 █
+█ 7 6 8 █ 4 9 2 █ 5 3 1 █
+█ 4 2 3 █ 1 5 6 █ 7 9 8 █
+█ 5 1 9 █ 3 8 7 █ 4 2 6 █
 █████████████████████████
-█ 1 3 8 █ 5 2 4 █ 9 7 6 █
-█ 7 2 9 █ 6 8 3 █ 1 5 4 █
-█ 4 5 6 █ 1 9 7 █ 3 2 8 █
+█ 1 9 7 █ 8 3 4 █ 2 6 5 █
+█ 3 4 2 █ 6 1 5 █ 9 8 7 █
+█ 6 8 5 █ 2 7 9 █ 1 4 3 █
 █████████████████████████
-█ 5 4 6 █ 9 1 2 █ 8 7 3 █
-█ 2 6 8 █ 3 4 5 █ 7 1 9 █
-█ 9 1 3 █ 7 6 8 █ 5 4 2 █
+█ 8 7 4 █ 5 2 3 █ 6 1 9 █
+█ 9 3 6 █ 7 4 1 █ 8 5 2 █
+█ 2 5 1 █ 9 6 8 █ 3 7 4 █
 █████████████████████████
 
-Fitness: 160

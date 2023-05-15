@@ -1,7 +1,7 @@
 import com.qqwing.*;
 import com.qqwing.Difficulty;
 
-public class SudokuGenerador {
+public class Sudoku {
 
 
  

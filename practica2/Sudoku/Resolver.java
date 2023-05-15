@@ -33,14 +33,14 @@ public class Resolver {
 
     Difficulty dificultad = Difficulty.EASY;
 
-    int [] lista = SudokuGenerador.calcularPuzle(dificultad);
-    matrizSudo = SudokuGenerador.arrayToSudoku(lista);
+    int [] lista = Sudoku.calcularPuzle(dificultad);
+    matrizSudo = Sudoku.arrayToSudoku(lista);
 
     System.out.println("Sudoku generado: \n");
     dLista.add("Sudoku generado: ");
     
-    System.out.println(SudokuGenerador.dibujarMatriz(matrizSudo));
-    dLista.add(SudokuGenerador.dibujarMatriz(matrizSudo));
+    System.out.println(Sudoku.dibujarMatriz(matrizSudo));
+    dLista.add(Sudoku.dibujarMatriz(matrizSudo));
     
     Individuo individuo = new Individuo(matrizSudo);
     
@@ -50,7 +50,7 @@ public class Resolver {
     System.out.println(" ************************************ \n");
     dLista.add(" Fitness: " + individuo.getFitness()+"\n");
 
-    AlgoritmoGenetico alGen = new AlgoritmoGenetico(matrizSudo, tamPoblacion, ratioHijo, ratioMutacion);
+    Poblacion alGen = new Poblacion(matrizSudo, tamPoblacion, ratioHijo, ratioMutacion);
 
     while (numIteraciones < limIteraciones && !solEncontrada) {
     	

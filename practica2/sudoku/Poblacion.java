@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class AlgoritmoGenetico {
+public class Poblacion {
 	
   private List<Individuo> poblacion;
   private int nPoblacion;
@@ -15,7 +15,7 @@ public class AlgoritmoGenetico {
   private double ratioHijo;
   private double ratioMutacion;
 
-  public AlgoritmoGenetico(int[][] sudoku, int nPoblacion, double ratioHijo, double ratioMutacion) {
+  public Poblacion(int[][] sudoku, int nPoblacion, double ratioHijo, double ratioMutacion) {
 	  
     this.sudoku = sudoku;
     this.nPoblacion = nPoblacion;

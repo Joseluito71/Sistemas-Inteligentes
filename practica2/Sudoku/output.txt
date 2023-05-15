@@ -1,0 +1,67 @@
+Sudoku generado: 
+-------------------------
+| 2 0 0 | 0 0 0 | 8 0 0 |
+| 3 1 0 | 0 0 0 | 9 6 0 |
+| 9 0 4 | 8 0 0 | 0 0 0 |
+-------------------------
+| 1 0 5 | 0 6 8 | 0 0 0 |
+| 8 0 0 | 0 0 1 | 0 0 0 |
+| 4 0 0 | 9 0 0 | 0 0 0 |
+-------------------------
+| 7 0 0 | 0 0 0 | 0 9 0 |
+| 6 0 3 | 5 0 7 | 1 2 8 |
+| 5 0 0 | 0 3 0 | 6 7 4 |
+-------------------------
+
+Fitness: 79
+Generacion: 500, Fitness promedio: 146, Mejor fitness: 153
+Generacion: 1000, Fitness promedio: 147, Mejor fitness: 156
+Generacion: 1500, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 2000, Fitness promedio: 148, Mejor fitness: 158
+Generacion: 2500, Fitness promedio: 150, Mejor fitness: 158
+Generacion: 3000, Fitness promedio: 150, Mejor fitness: 160
+Generacion: 3500, Fitness promedio: 153, Mejor fitness: 160
+Generacion: 4000, Fitness promedio: 153, Mejor fitness: 160
+Generacion: 4500, Fitness promedio: 151, Mejor fitness: 160
+Generacion: 5000, Fitness promedio: 152, Mejor fitness: 160
+Población regenerada
+Generacion: 5500, Fitness promedio: 149, Mejor fitness: 157
+Generacion: 6000, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 6500, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 7000, Fitness promedio: 151, Mejor fitness: 158
+Generacion: 7500, Fitness promedio: 150, Mejor fitness: 158
+Generacion: 8000, Fitness promedio: 151, Mejor fitness: 158
+Generacion: 8500, Fitness promedio: 150, Mejor fitness: 158
+Generacion: 9000, Fitness promedio: 150, Mejor fitness: 158
+Generacion: 9500, Fitness promedio: 151, Mejor fitness: 158
+Generacion: 10000, Fitness promedio: 151, Mejor fitness: 158
+Población regenerada
+Generacion: 10500, Fitness promedio: 149, Mejor fitness: 154
+Generacion: 11000, Fitness promedio: 151, Mejor fitness: 158
+Generacion: 11500, Fitness promedio: 151, Mejor fitness: 158
+Generacion: 12000, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 12500, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 13000, Fitness promedio: 152, Mejor fitness: 158
+Generacion: 13500, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 14000, Fitness promedio: 151, Mejor fitness: 158
+Generacion: 14500, Fitness promedio: 150, Mejor fitness: 158
+Generacion: 15000, Fitness promedio: 150, Mejor fitness: 158
+Población regenerada
+Generacion: 15500, Fitness promedio: 149, Mejor fitness: 158
+Generacion: 15586, Fitness promedio: 150, Mejor fitness: 162
+Solucion encontrada
+█████████████████████████
+█ 2 5 7 █ 3 1 6 █ 8 4 9 █
+█ 3 1 8 █ 7 9 4 █ 2 6 5 █
+█ 9 6 4 █ 8 2 5 █ 7 1 3 █
+█████████████████████████
+█ 1 2 5 █ 4 6 8 █ 9 3 7 █
+█ 8 3 9 █ 2 7 1 █ 4 5 6 █
+█ 4 7 6 █ 9 5 3 █ 1 8 2 █
+█████████████████████████
+█ 7 4 3 █ 6 8 2 █ 5 9 1 █
+█ 6 9 1 █ 5 4 7 █ 3 2 8 █
+█ 5 8 2 █ 1 3 9 █ 6 7 4 █
+█████████████████████████
+
+Generacion: 430

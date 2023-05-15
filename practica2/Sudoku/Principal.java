@@ -76,12 +76,12 @@ public class Principal {
       // de la población
       for (int i = elite; i < poblacionSize; i += 2) {
         // Seleccionar individuo
-        Individuo individuoPadre1 = algoritmoGenetico.seleccionarIndividuo();
-        Individuo individuoPadre2 = algoritmoGenetico.seleccionarIndividuo();
+        Individuo individuoPadre1 = algoritmoGenetico.cogerIndividuo();
+        Individuo individuoPadre2 = algoritmoGenetico.cogerIndividuo();
 
-        Individuo[] nuevoIndividuos = algoritmoGenetico.cruzarIndividuos(individuoPadre1, individuoPadre2);
-        algoritmoGenetico.mutarIndividuoVerificar(nuevoIndividuos[0]);
-        algoritmoGenetico.mutarIndividuoVerificar(nuevoIndividuos[1]);
+        Individuo[] nuevoIndividuos = algoritmoGenetico.MezclarIndividuos(individuoPadre1, individuoPadre2);
+        algoritmoGenetico.comprobarMutar(nuevoIndividuos[0]);
+        algoritmoGenetico.comprobarMutar(nuevoIndividuos[1]);
         nuevaPoblacion.add(nuevoIndividuos[0]);
         nuevaPoblacion.add(nuevoIndividuos[1]);
 
@@ -91,7 +91,7 @@ public class Principal {
       algoritmoGenetico.setPoblacion(nuevaPoblacion);
 
       // Evaluar si el individuo es solución
-      solucion = algoritmoGenetico.buscarSolucion();
+      solucion = algoritmoGenetico.buscarRes();
       generaciones++;
       generacionesReales++;
 
@@ -115,7 +115,7 @@ public class Principal {
         }
         System.out.print(" Fitness promedio: " + fitnessPromedio /
             algoritmoGenetico.getPoblacion().size());
-        Individuo mejorIndividuo = algoritmoGenetico.mejorIndividuo();
+        Individuo mejorIndividuo = algoritmoGenetico.buscarMejor();
         System.out.println(" Mejor fitness: " + mejorIndividuo.getFitness());
         datos.add("Generacion: " + generaciones + "," + " Fitness promedio: " + fitnessPromedio /
             algoritmoGenetico.getPoblacion().size() + "," + " Mejor fitness: " + mejorIndividuo.getFitness());
@@ -127,14 +127,14 @@ public class Principal {
 
     {
       System.out.println("Solucion encontrada");
-      System.out.println(algoritmoGenetico.getSolucion());
+      System.out.println(algoritmoGenetico.buscarRes());
       System.out.println("Generacion: " + generacionesReales);
       datos.add("Solucion encontrada");
-      datos.add(algoritmoGenetico.getSolucion().toString());
+      datos.add(algoritmoGenetico.getRes().toString());
       datos.add("Generacion: " + generacionesReales);
     } else {
       System.out.println("Solucion no encontrada");
-      Individuo mejorIndividuo = algoritmoGenetico.mejorIndividuo();
+      Individuo mejorIndividuo = algoritmoGenetico.buscarMejor();
       System.out.println(mejorIndividuo);
       System.out.println("Fitness: " + mejorIndividuo.getFitness());
       datos.add("Solucion no encontrada");

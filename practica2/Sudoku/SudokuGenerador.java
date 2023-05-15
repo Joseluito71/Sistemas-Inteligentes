@@ -4,35 +4,18 @@ import com.qqwing.Difficulty;
 public class SudokuGenerador {
 
 
-  public static int[][] arrayTomatriz(int[] arrayEntrada) {
-	  
-    int[][] matriz = new int[9][9];
-    
-    int k = 0;
-    
-    for (int i = 0; i < 9; i++) {
-    	
-      for (int j = 0; j < 9; j++) {
-    	  
-        matriz[i][j] = arrayEntrada[k];
-        
-        k++;
-        
-      }
-    }
-    return matriz;
-  }
+ 
 
  
-  public static String printMatrix(int[][] matriz) {
+  public static String dibujarMatriz(int[][] sudoku) {
 	  
-    String result = "";
+    String linea = "";
     
     for (int i = 0; i < 9; i++) {
     	
       if (i % 3 == 0) {
     	  
-        result += "█████████████████████████\n";
+        linea += "█████████████████████████\n";
         
       }
       
@@ -40,38 +23,56 @@ public class SudokuGenerador {
     	  
         if (j % 3 == 0) {
         	
-          result += "█ ";
+          linea += "█ ";
           
         }
         
-        result = result + matriz[i][j] + " ";
+        linea = linea + sudoku[i][j] + " ";
         
       }
       
-      result += "█\n";
+      linea += "█\n";
       
     }
     
-    result += "█████████████████████████\n";
+    linea += "█████████████████████████\n";
     
-    return result;
+    return linea;
     
   }
+  public static int[][] arrayToSudoku(int[] arrayASudoku) {
+	  
+	    int[][] sudoku = new int[9][9];
+	    
+	    int k = 0;
+	    
+	    for (int i = 0; i < 9; i++) {
+	    	
+	      for (int j = 0; j < 9; j++) {
+	    	  
+	        sudoku[i][j] = arrayASudoku[k];
+	        
+	        k++;
+	        
+	      }
+	    }
+	    return sudoku;
+	  }
 
-  public static int[] computePuzzleByDifficulty(Difficulty d) {
+  public static int[] calcularPuzle(Difficulty d) {
 	  
     QQWing qq = new QQWing();
     qq.setRecordHistory(true);
     qq.setLogHistory(false);
     
-    boolean go_on = true;
+    boolean control = true;
     
-    while (go_on) {
+    while (control) {
     	
       qq.generatePuzzle();
       qq.solve();
-      Difficulty actual_d = qq.getDifficulty();
-      go_on = !actual_d.equals(d);
+      Difficulty dificultadActual = qq.getDifficulty();
+      control = !dificultadActual.equals(d);
       
     }
     
@@ -80,23 +81,4 @@ public class SudokuGenerador {
     
   }
 
-  public static int[][] computePuzzleByDifficultyAndFitness(Difficulty difficulty, int rangoInferior,
-      int rangoSuperior) {
-    int[][] matrizSudoku;
-    int fitness = 0;
-
-    do {
-
-      // Difficulty difficulty = Difficulty.EXPERT;
-      int[] sudoku = computePuzzleByDifficulty(difficulty);
-      matrizSudoku = arrayTomatriz(sudoku);
-      // matrizSudokuCopy = SudokuGenerador.arrayTomatriz(sudoku);
-      matrizSudoku = PencilMarking.pencilMarking(matrizSudoku);
-      Individuo individuoTest = new Individuo(matrizSudoku);
-      fitness = individuoTest.getFitness();
-    } while (fitness < rangoInferior || fitness > rangoSuperior);
-    System.out.println("Sudoku inicial. Fitness: " + fitness);
-
-    return matrizSudoku;
-  }
 }

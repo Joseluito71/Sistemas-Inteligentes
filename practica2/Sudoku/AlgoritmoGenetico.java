@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AlgoritmoGenetico {
+	
   private List<Individuo> poblacion;
   private int nPoblacion;
   private int[][] sudoku;
